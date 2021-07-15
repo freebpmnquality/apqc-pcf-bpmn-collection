@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_9e560694-e75e-44d7-bd43-75115147ba35" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_818a0d47-ad52-4644-b611-702b8e53de22" name="Train and educate functional employees">
+    <startEvent id="startEvent_ead7d0c9-8564-4e12-b78e-b19d0b22e289">
+      <outgoing>sequenceFlow_fadc0cbd-f48d-4430-896b-b292d1219213</outgoing>
+    </startEvent>
+    <userTask id="userTask_248da72f-cb9a-49c9-8065-a3383ebe856b" name="13.7.3.1. Communicate EHS issues to stakeholders and provide support">
+      <incoming>sequenceFlow_fadc0cbd-f48d-4430-896b-b292d1219213</incoming>
+      <outgoing>sequenceFlow_171739e5-7694-4523-911f-78e1af9a5163</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_fadc0cbd-f48d-4430-896b-b292d1219213" sourceRef="startEvent_ead7d0c9-8564-4e12-b78e-b19d0b22e289" targetRef="userTask_248da72f-cb9a-49c9-8065-a3383ebe856b"/>
+    <endEvent id="endEvent_fb01ba30-de4e-4550-b8e4-a27f5dc6df4c">
+      <incoming>sequenceFlow_171739e5-7694-4523-911f-78e1af9a5163</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_171739e5-7694-4523-911f-78e1af9a5163" sourceRef="userTask_248da72f-cb9a-49c9-8065-a3383ebe856b" targetRef="endEvent_fb01ba30-de4e-4550-b8e4-a27f5dc6df4c"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_5b1d6771-1b2d-4ce6-9233-a892f6bf72ac">
+    <bpmndi:BPMNPlane bpmnElement="process_818a0d47-ad52-4644-b611-702b8e53de22" id="BPMNPlane_b2f53c05-5a01-499a-af9f-7ab8e2881e3d">
+      <bpmndi:BPMNShape bpmnElement="startEvent_ead7d0c9-8564-4e12-b78e-b19d0b22e289" id="BPMNShape_a0dc9253-43ca-464f-a146-c2f9e8c82bee">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_248da72f-cb9a-49c9-8065-a3383ebe856b" id="BPMNShape_aa6eda90-67b0-4b7e-be76-c62ca9347a52">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_fadc0cbd-f48d-4430-896b-b292d1219213" id="BPMNEdge_cc3435e6-6e2d-4db1-9151-4ded27114fa5">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_fb01ba30-de4e-4550-b8e4-a27f5dc6df4c" id="BPMNShape_4b13b769-bf81-4714-93d6-ecf0c2ea69d7">
+        <dc:Bounds height="36.0" width="36.0" x="336.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_171739e5-7694-4523-911f-78e1af9a5163" id="BPMNEdge_19e10938-b14b-4ac1-8cfe-8dcc60c8ec47">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

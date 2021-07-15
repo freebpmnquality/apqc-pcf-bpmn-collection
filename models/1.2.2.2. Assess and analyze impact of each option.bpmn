@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_46bcf87d-e541-4366-942a-85fdb6c56b2e" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_2823fefc-4b97-4218-9f0b-ce4e5a7fdfb0" name="Assess and analyze impact of each option">
+    <startEvent id="startEvent_4afd83b8-c231-48e6-81ae-bfa93522f3d8">
+      <outgoing>sequenceFlow_3a41b09e-7026-472e-b0cd-f0f48fb85e89</outgoing>
+    </startEvent>
+    <userTask id="userTask_5ea37c7b-406f-456f-a44b-303d8f469ddd" name="1.2.2.2.1. Identify implications for key operating model business elements that require change">
+      <incoming>sequenceFlow_3a41b09e-7026-472e-b0cd-f0f48fb85e89</incoming>
+      <outgoing>sequenceFlow_ff94ec48-2477-4f53-bca5-cd2b2177ca96</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_3a41b09e-7026-472e-b0cd-f0f48fb85e89" sourceRef="startEvent_4afd83b8-c231-48e6-81ae-bfa93522f3d8" targetRef="userTask_5ea37c7b-406f-456f-a44b-303d8f469ddd"/>
+    <userTask id="userTask_6fbd465b-6b32-4c72-935d-ccff67027484" name="1.2.2.2.2. Identify implications for key technology aspects">
+      <incoming>sequenceFlow_ff94ec48-2477-4f53-bca5-cd2b2177ca96</incoming>
+      <outgoing>sequenceFlow_d9136413-3225-4a57-8993-f5bf7ecdde4e</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_ff94ec48-2477-4f53-bca5-cd2b2177ca96" sourceRef="userTask_5ea37c7b-406f-456f-a44b-303d8f469ddd" targetRef="userTask_6fbd465b-6b32-4c72-935d-ccff67027484"/>
+    <endEvent id="endEvent_c1a1fc60-c086-4e26-990c-6c8a76d8757c">
+      <incoming>sequenceFlow_d9136413-3225-4a57-8993-f5bf7ecdde4e</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_d9136413-3225-4a57-8993-f5bf7ecdde4e" sourceRef="userTask_6fbd465b-6b32-4c72-935d-ccff67027484" targetRef="endEvent_c1a1fc60-c086-4e26-990c-6c8a76d8757c"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_c83b8a8a-e3d3-4bab-834d-3b0763a0d552">
+    <bpmndi:BPMNPlane bpmnElement="process_2823fefc-4b97-4218-9f0b-ce4e5a7fdfb0" id="BPMNPlane_a6007225-4eb2-49ca-a133-5621071f0425">
+      <bpmndi:BPMNShape bpmnElement="startEvent_4afd83b8-c231-48e6-81ae-bfa93522f3d8" id="BPMNShape_55fb25aa-8c8d-4ab1-af38-ccadf73a3002">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_5ea37c7b-406f-456f-a44b-303d8f469ddd" id="BPMNShape_d0d9855e-829e-4e5d-b08f-5aa7dc90b54b">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_3a41b09e-7026-472e-b0cd-f0f48fb85e89" id="BPMNEdge_2bfb3314-356e-4f6e-a880-09d2c47ed2c1">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_6fbd465b-6b32-4c72-935d-ccff67027484" id="BPMNShape_3d1f26c6-fd9d-4309-94d9-043e1dcb8724">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_ff94ec48-2477-4f53-bca5-cd2b2177ca96" id="BPMNEdge_88ce794e-1619-43f8-8fc4-4ec67836bd4a">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_c1a1fc60-c086-4e26-990c-6c8a76d8757c" id="BPMNShape_b05c51d7-c98b-43fe-b224-7e1d6320a15d">
+        <dc:Bounds height="36.0" width="36.0" x="486.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_d9136413-3225-4a57-8993-f5bf7ecdde4e" id="BPMNEdge_779e859c-e5c0-43d6-a309-166944953d45">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

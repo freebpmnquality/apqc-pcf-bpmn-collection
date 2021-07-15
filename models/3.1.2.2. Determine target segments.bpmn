@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_1fc6a337-16dc-46d2-9c40-940e10e6a3ae" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_b3b84177-271b-4fcb-8406-745db2cb7c55" name="Determine target segments">
+    <startEvent id="startEvent_c965ee4b-d42a-4cb4-8859-def6a775efa4">
+      <outgoing>sequenceFlow_693c63af-7a67-47ce-bcd7-6988a219375e</outgoing>
+    </startEvent>
+    <userTask id="userTask_35586656-b6e7-4a9d-82f1-43d5ffd9d480" name="3.1.2.2.1. Identify under-served and saturated market segments">
+      <incoming>sequenceFlow_693c63af-7a67-47ce-bcd7-6988a219375e</incoming>
+      <outgoing>sequenceFlow_21950aaa-4296-4926-94b7-10c149ca7b06</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_693c63af-7a67-47ce-bcd7-6988a219375e" sourceRef="startEvent_c965ee4b-d42a-4cb4-8859-def6a775efa4" targetRef="userTask_35586656-b6e7-4a9d-82f1-43d5ffd9d480"/>
+    <endEvent id="endEvent_9484bfee-0b54-460a-b1dc-ff13e0eab044">
+      <incoming>sequenceFlow_21950aaa-4296-4926-94b7-10c149ca7b06</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_21950aaa-4296-4926-94b7-10c149ca7b06" sourceRef="userTask_35586656-b6e7-4a9d-82f1-43d5ffd9d480" targetRef="endEvent_9484bfee-0b54-460a-b1dc-ff13e0eab044"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_8a736116-6282-4fc4-8d42-2c367c00ed17">
+    <bpmndi:BPMNPlane bpmnElement="process_b3b84177-271b-4fcb-8406-745db2cb7c55" id="BPMNPlane_c829445d-5829-4bb1-b887-1cd754985ac3">
+      <bpmndi:BPMNShape bpmnElement="startEvent_c965ee4b-d42a-4cb4-8859-def6a775efa4" id="BPMNShape_714f57a9-c469-4811-98df-d59752dccf73">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_35586656-b6e7-4a9d-82f1-43d5ffd9d480" id="BPMNShape_aa8304df-c657-40fa-a1b0-7bf559d99e9c">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_693c63af-7a67-47ce-bcd7-6988a219375e" id="BPMNEdge_59bcb544-ca82-40d6-9641-0772b4df5020">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_9484bfee-0b54-460a-b1dc-ff13e0eab044" id="BPMNShape_761efa8f-11e2-4d78-82ed-afbb8a7137e3">
+        <dc:Bounds height="36.0" width="36.0" x="336.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_21950aaa-4296-4926-94b7-10c149ca7b06" id="BPMNEdge_2fb99359-d18b-41be-985b-34ecd308fcbb">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

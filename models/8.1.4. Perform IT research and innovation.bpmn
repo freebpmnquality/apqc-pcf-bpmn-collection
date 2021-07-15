@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_bd903d6d-dd4f-41c1-9e6a-abc9aed614ec" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_d7b83991-10c0-4fff-b30d-c8e23d8327fe" name="Perform IT research and innovation">
+    <startEvent id="startEvent_95c8497c-c881-468e-ad98-0f2745537a3c">
+      <outgoing>sequenceFlow_b92545cd-dfd4-44cb-804c-05b493bd07bc</outgoing>
+    </startEvent>
+    <userTask id="userTask_c14a912c-eb35-4a88-bc92-26f353b50f97" name="8.1.4.1. Research technologies to innovate IT services and solutions">
+      <incoming>sequenceFlow_b92545cd-dfd4-44cb-804c-05b493bd07bc</incoming>
+      <outgoing>sequenceFlow_d281a5f3-04fb-4147-9c97-fb12d26dbb99</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_b92545cd-dfd4-44cb-804c-05b493bd07bc" sourceRef="startEvent_95c8497c-c881-468e-ad98-0f2745537a3c" targetRef="userTask_c14a912c-eb35-4a88-bc92-26f353b50f97"/>
+    <userTask id="userTask_a43050a4-24be-4bca-809a-355c881a4300" name="8.1.4.2. Transition viable technologies for IT services and solutions development">
+      <incoming>sequenceFlow_d281a5f3-04fb-4147-9c97-fb12d26dbb99</incoming>
+      <outgoing>sequenceFlow_b5345edf-32ec-4d8f-951f-98b646961e70</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_d281a5f3-04fb-4147-9c97-fb12d26dbb99" sourceRef="userTask_c14a912c-eb35-4a88-bc92-26f353b50f97" targetRef="userTask_a43050a4-24be-4bca-809a-355c881a4300"/>
+    <endEvent id="endEvent_fac2ff2f-e3c7-46a0-8bb0-49f4ac1692f3">
+      <incoming>sequenceFlow_b5345edf-32ec-4d8f-951f-98b646961e70</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_b5345edf-32ec-4d8f-951f-98b646961e70" sourceRef="userTask_a43050a4-24be-4bca-809a-355c881a4300" targetRef="endEvent_fac2ff2f-e3c7-46a0-8bb0-49f4ac1692f3"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_e1109e17-d19d-4d58-b0d8-7428b400689c">
+    <bpmndi:BPMNPlane bpmnElement="process_d7b83991-10c0-4fff-b30d-c8e23d8327fe" id="BPMNPlane_b3bd856b-ab92-4793-b452-fc0dd0a39db5">
+      <bpmndi:BPMNShape bpmnElement="startEvent_95c8497c-c881-468e-ad98-0f2745537a3c" id="BPMNShape_fbbc6922-0403-48fd-9a28-9ea2127cc208">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_c14a912c-eb35-4a88-bc92-26f353b50f97" id="BPMNShape_dfcd4a4f-f8ad-48c3-b06d-b799f1d3c4f0">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_b92545cd-dfd4-44cb-804c-05b493bd07bc" id="BPMNEdge_8089759c-49f9-4fba-8372-f63ff61599ca">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_a43050a4-24be-4bca-809a-355c881a4300" id="BPMNShape_2662e666-b604-4dc9-82c8-5fbc20092bb0">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_d281a5f3-04fb-4147-9c97-fb12d26dbb99" id="BPMNEdge_b17e6350-7400-4e09-8f71-808c3f9fd432">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_fac2ff2f-e3c7-46a0-8bb0-49f4ac1692f3" id="BPMNShape_801ca2ec-55a8-4d42-a300-4e3bbab0c015">
+        <dc:Bounds height="36.0" width="36.0" x="486.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_b5345edf-32ec-4d8f-951f-98b646961e70" id="BPMNEdge_4a789dcd-6a64-4512-963e-9ebb2153c438">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

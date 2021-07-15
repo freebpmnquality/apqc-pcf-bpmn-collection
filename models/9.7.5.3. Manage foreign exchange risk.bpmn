@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_643c035c-4259-4e72-bf37-c0082acd1bb0" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_fc587111-9942-4da4-9188-74394794b962" name="Manage foreign exchange risk">
+    <startEvent id="startEvent_64dac504-c1ee-4396-9810-59d0434934e2">
+      <outgoing>sequenceFlow_2fd45335-bae3-4c24-8812-d4b57dbb3578</outgoing>
+    </startEvent>
+    <userTask id="userTask_ac71dfcc-7074-475c-ae3f-2cdeb35202ec" name="9.7.5.3.1. Manage foreign exchange market data">
+      <incoming>sequenceFlow_2fd45335-bae3-4c24-8812-d4b57dbb3578</incoming>
+      <outgoing>sequenceFlow_8d8e8077-e20d-4eba-9224-2ce78fec392b</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_2fd45335-bae3-4c24-8812-d4b57dbb3578" sourceRef="startEvent_64dac504-c1ee-4396-9810-59d0434934e2" targetRef="userTask_ac71dfcc-7074-475c-ae3f-2cdeb35202ec"/>
+    <userTask id="userTask_649debc8-622b-41c0-a25a-0ace57c43152" name="9.7.5.3.2. Determine foreign exchange exposure for all currencies">
+      <incoming>sequenceFlow_8d8e8077-e20d-4eba-9224-2ce78fec392b</incoming>
+      <outgoing>sequenceFlow_1abf375d-103c-40ff-987d-fc201b8f8682</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_8d8e8077-e20d-4eba-9224-2ce78fec392b" sourceRef="userTask_ac71dfcc-7074-475c-ae3f-2cdeb35202ec" targetRef="userTask_649debc8-622b-41c0-a25a-0ace57c43152"/>
+    <userTask id="userTask_938fa0aa-9a34-4695-a0bf-7ffa23438103" name="9.7.5.3.3. Determine foreign exchange hedge requirements in accordance with risk policy">
+      <incoming>sequenceFlow_1abf375d-103c-40ff-987d-fc201b8f8682</incoming>
+      <outgoing>sequenceFlow_c19ef8ca-29d6-4bf4-a25f-889e3d6828fa</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_1abf375d-103c-40ff-987d-fc201b8f8682" sourceRef="userTask_649debc8-622b-41c0-a25a-0ace57c43152" targetRef="userTask_938fa0aa-9a34-4695-a0bf-7ffa23438103"/>
+    <userTask id="userTask_9008db6d-ad02-4558-bbbd-79097782337b" name="9.7.5.3.4. Execute foreign exchange trades">
+      <incoming>sequenceFlow_c19ef8ca-29d6-4bf4-a25f-889e3d6828fa</incoming>
+      <outgoing>sequenceFlow_7a2d8c02-c33b-432d-821a-38b86f4d71cf</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_c19ef8ca-29d6-4bf4-a25f-889e3d6828fa" sourceRef="userTask_938fa0aa-9a34-4695-a0bf-7ffa23438103" targetRef="userTask_9008db6d-ad02-4558-bbbd-79097782337b"/>
+    <userTask id="userTask_d3d7c5f6-310a-4681-a36e-d567041957ff" name="9.7.5.3.5. Mange foreign exchange balance sheet risk">
+      <incoming>sequenceFlow_7a2d8c02-c33b-432d-821a-38b86f4d71cf</incoming>
+      <outgoing>sequenceFlow_2c790bbf-3c7e-443e-b3b6-7a8ff14824be</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_7a2d8c02-c33b-432d-821a-38b86f4d71cf" sourceRef="userTask_9008db6d-ad02-4558-bbbd-79097782337b" targetRef="userTask_d3d7c5f6-310a-4681-a36e-d567041957ff"/>
+    <endEvent id="endEvent_9ad343ec-323b-4fba-a604-fc425df9ec3a">
+      <incoming>sequenceFlow_2c790bbf-3c7e-443e-b3b6-7a8ff14824be</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_2c790bbf-3c7e-443e-b3b6-7a8ff14824be" sourceRef="userTask_d3d7c5f6-310a-4681-a36e-d567041957ff" targetRef="endEvent_9ad343ec-323b-4fba-a604-fc425df9ec3a"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_4865a5aa-ec18-49b4-96b9-2414a4f65194">
+    <bpmndi:BPMNPlane bpmnElement="process_fc587111-9942-4da4-9188-74394794b962" id="BPMNPlane_502b8b39-f653-4b8b-8340-49bec99c224a">
+      <bpmndi:BPMNShape bpmnElement="startEvent_64dac504-c1ee-4396-9810-59d0434934e2" id="BPMNShape_7a94ca14-c9d1-4928-86b3-98aefa08ebf1">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_ac71dfcc-7074-475c-ae3f-2cdeb35202ec" id="BPMNShape_bacc17c1-f0ab-4863-9f53-1e95b13c05a2">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_2fd45335-bae3-4c24-8812-d4b57dbb3578" id="BPMNEdge_6f28e4f2-4e7f-4155-ac43-6b8e9768d5ce">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_649debc8-622b-41c0-a25a-0ace57c43152" id="BPMNShape_8eba9e18-0593-4b03-bc61-503f14d07d1d">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_8d8e8077-e20d-4eba-9224-2ce78fec392b" id="BPMNEdge_276c373e-b8b9-4829-9c20-8db877d43f26">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_938fa0aa-9a34-4695-a0bf-7ffa23438103" id="BPMNShape_b463b5a7-520d-417d-bb01-e0a69702d697">
+        <dc:Bounds height="80.0" width="100.0" x="486.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_1abf375d-103c-40ff-987d-fc201b8f8682" id="BPMNEdge_c92dd0db-46a7-4e86-8c24-881dedbd4641">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_9008db6d-ad02-4558-bbbd-79097782337b" id="BPMNShape_11eae368-9ffc-48a9-9b1a-a961dc287149">
+        <dc:Bounds height="80.0" width="100.0" x="636.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_c19ef8ca-29d6-4bf4-a25f-889e3d6828fa" id="BPMNEdge_287a1539-1736-4167-9655-bf00f864fa89">
+        <di:waypoint x="586.0" y="118.0"/>
+        <di:waypoint x="636.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_d3d7c5f6-310a-4681-a36e-d567041957ff" id="BPMNShape_51ac0ca1-ce63-421f-995f-704337477e33">
+        <dc:Bounds height="80.0" width="100.0" x="786.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_7a2d8c02-c33b-432d-821a-38b86f4d71cf" id="BPMNEdge_ad9fd257-1d1b-4885-866a-698345ad2123">
+        <di:waypoint x="736.0" y="118.0"/>
+        <di:waypoint x="786.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_9ad343ec-323b-4fba-a604-fc425df9ec3a" id="BPMNShape_283a8099-130d-4a68-a029-5040a0558aa1">
+        <dc:Bounds height="36.0" width="36.0" x="936.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_2c790bbf-3c7e-443e-b3b6-7a8ff14824be" id="BPMNEdge_0e5c31f7-8e05-4678-a91f-b02b12af1306">
+        <di:waypoint x="886.0" y="118.0"/>
+        <di:waypoint x="936.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

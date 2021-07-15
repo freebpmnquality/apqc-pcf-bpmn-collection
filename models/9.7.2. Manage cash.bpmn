@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_9b9e1c7e-4207-4d50-a6ab-c1d403968a3d" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_c0f3eaf3-bdd6-432b-aa4b-3c2368916cf2" name="Manage cash">
+    <startEvent id="startEvent_335be3a4-b76a-4fb0-95d3-1848982ef92a">
+      <outgoing>sequenceFlow_3133534e-105e-4acd-ac29-457a38765ffe</outgoing>
+    </startEvent>
+    <userTask id="userTask_52f38090-e119-41cf-8af2-133a66bd9f2f" name="9.7.2.1. Manage and reconcile cash positions">
+      <incoming>sequenceFlow_3133534e-105e-4acd-ac29-457a38765ffe</incoming>
+      <outgoing>sequenceFlow_7fa350cb-6bd0-4130-90d7-7bc6eb0ae0ad</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_3133534e-105e-4acd-ac29-457a38765ffe" sourceRef="startEvent_335be3a4-b76a-4fb0-95d3-1848982ef92a" targetRef="userTask_52f38090-e119-41cf-8af2-133a66bd9f2f"/>
+    <userTask id="userTask_68340107-e2f8-4f3b-9f98-a92a0ec70c26" name="9.7.2.2. Manage cash equivalents">
+      <incoming>sequenceFlow_7fa350cb-6bd0-4130-90d7-7bc6eb0ae0ad</incoming>
+      <outgoing>sequenceFlow_abc2a7fb-a9ca-450d-8b24-202d62a0632c</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_7fa350cb-6bd0-4130-90d7-7bc6eb0ae0ad" sourceRef="userTask_52f38090-e119-41cf-8af2-133a66bd9f2f" targetRef="userTask_68340107-e2f8-4f3b-9f98-a92a0ec70c26"/>
+    <userTask id="userTask_c752ea45-073c-4cea-9090-252c11df59f6" name="9.7.2.3. Process and oversee electronic fund transfers (EFTs)">
+      <incoming>sequenceFlow_abc2a7fb-a9ca-450d-8b24-202d62a0632c</incoming>
+      <outgoing>sequenceFlow_3aba3da0-3c11-457f-b3c9-295915546173</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_abc2a7fb-a9ca-450d-8b24-202d62a0632c" sourceRef="userTask_68340107-e2f8-4f3b-9f98-a92a0ec70c26" targetRef="userTask_c752ea45-073c-4cea-9090-252c11df59f6"/>
+    <userTask id="userTask_2a1d1a09-6998-476c-aa5b-dfdeafe71a70" name="9.7.2.4. Develop cash flow forecasts">
+      <incoming>sequenceFlow_3aba3da0-3c11-457f-b3c9-295915546173</incoming>
+      <outgoing>sequenceFlow_7247e3d1-94c4-4355-98f3-a7844c64506e</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_3aba3da0-3c11-457f-b3c9-295915546173" sourceRef="userTask_c752ea45-073c-4cea-9090-252c11df59f6" targetRef="userTask_2a1d1a09-6998-476c-aa5b-dfdeafe71a70"/>
+    <userTask id="userTask_d172bbbb-16d0-4dc9-8a93-077aefc02611" name="9.7.2.5. Manage cash flows">
+      <incoming>sequenceFlow_7247e3d1-94c4-4355-98f3-a7844c64506e</incoming>
+      <outgoing>sequenceFlow_44bed2ea-bf0c-4eaf-bb3e-cb6916692962</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_7247e3d1-94c4-4355-98f3-a7844c64506e" sourceRef="userTask_2a1d1a09-6998-476c-aa5b-dfdeafe71a70" targetRef="userTask_d172bbbb-16d0-4dc9-8a93-077aefc02611"/>
+    <userTask id="userTask_f93134b2-6fb1-4867-930f-4c29b55ab6d5" name="9.7.2.6. Produce cash management accounting transactions and reports">
+      <incoming>sequenceFlow_44bed2ea-bf0c-4eaf-bb3e-cb6916692962</incoming>
+      <outgoing>sequenceFlow_acd2d6f8-306b-4b7d-bcf3-a5102e286094</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_44bed2ea-bf0c-4eaf-bb3e-cb6916692962" sourceRef="userTask_d172bbbb-16d0-4dc9-8a93-077aefc02611" targetRef="userTask_f93134b2-6fb1-4867-930f-4c29b55ab6d5"/>
+    <userTask id="userTask_80ef171d-4d1b-45ea-b3dc-b2ef40041d57" name="9.7.2.7. Manage and oversee banking relationships">
+      <incoming>sequenceFlow_acd2d6f8-306b-4b7d-bcf3-a5102e286094</incoming>
+      <outgoing>sequenceFlow_7c614d6e-3342-4685-8893-9ee14fd007d9</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_acd2d6f8-306b-4b7d-bcf3-a5102e286094" sourceRef="userTask_f93134b2-6fb1-4867-930f-4c29b55ab6d5" targetRef="userTask_80ef171d-4d1b-45ea-b3dc-b2ef40041d57"/>
+    <userTask id="userTask_9596f8cd-d096-4f33-a29c-6ddc4ef0474e" name="9.7.2.8. Analyze, negotiate, resolve, and confirm bank fees">
+      <incoming>sequenceFlow_7c614d6e-3342-4685-8893-9ee14fd007d9</incoming>
+      <outgoing>sequenceFlow_2ae390d5-e777-4eac-bf37-d8ee5b55d352</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_7c614d6e-3342-4685-8893-9ee14fd007d9" sourceRef="userTask_80ef171d-4d1b-45ea-b3dc-b2ef40041d57" targetRef="userTask_9596f8cd-d096-4f33-a29c-6ddc4ef0474e"/>
+    <endEvent id="endEvent_015c5b76-c7ce-49a7-852b-8c6ad0149ba0">
+      <incoming>sequenceFlow_2ae390d5-e777-4eac-bf37-d8ee5b55d352</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_2ae390d5-e777-4eac-bf37-d8ee5b55d352" sourceRef="userTask_9596f8cd-d096-4f33-a29c-6ddc4ef0474e" targetRef="endEvent_015c5b76-c7ce-49a7-852b-8c6ad0149ba0"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_a57e1199-c6fc-4859-9dc9-d1e3217e1bde">
+    <bpmndi:BPMNPlane bpmnElement="process_c0f3eaf3-bdd6-432b-aa4b-3c2368916cf2" id="BPMNPlane_189f66f3-3d00-4338-a604-7c388bbb5784">
+      <bpmndi:BPMNShape bpmnElement="startEvent_335be3a4-b76a-4fb0-95d3-1848982ef92a" id="BPMNShape_a6da69c5-4950-4e29-8825-1242487c5a8f">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_52f38090-e119-41cf-8af2-133a66bd9f2f" id="BPMNShape_521c7943-ebb1-47a6-80ff-040f2a91f6a9">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_3133534e-105e-4acd-ac29-457a38765ffe" id="BPMNEdge_91c2bb22-6c62-45af-bad9-d6e2dbad324c">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_68340107-e2f8-4f3b-9f98-a92a0ec70c26" id="BPMNShape_7bb61f38-37f4-49bd-9ef1-81ab549e43b0">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_7fa350cb-6bd0-4130-90d7-7bc6eb0ae0ad" id="BPMNEdge_fd3429aa-4273-4ffe-976f-d56c25dec75a">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_c752ea45-073c-4cea-9090-252c11df59f6" id="BPMNShape_820da5b6-c99e-4333-9c53-eca3520cfebc">
+        <dc:Bounds height="80.0" width="100.0" x="486.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_abc2a7fb-a9ca-450d-8b24-202d62a0632c" id="BPMNEdge_c5d315fa-d2e8-465d-a244-859eabce3a54">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_2a1d1a09-6998-476c-aa5b-dfdeafe71a70" id="BPMNShape_ef76c5fe-ebb9-4ba2-95c1-87558584945f">
+        <dc:Bounds height="80.0" width="100.0" x="636.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_3aba3da0-3c11-457f-b3c9-295915546173" id="BPMNEdge_7298f0dd-0da5-4fe0-a1ed-c37c759fab0f">
+        <di:waypoint x="586.0" y="118.0"/>
+        <di:waypoint x="636.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_d172bbbb-16d0-4dc9-8a93-077aefc02611" id="BPMNShape_899ca1b6-49df-4770-951d-911fad546c48">
+        <dc:Bounds height="80.0" width="100.0" x="786.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_7247e3d1-94c4-4355-98f3-a7844c64506e" id="BPMNEdge_ac8971a1-194c-48d3-963f-c66c1171e625">
+        <di:waypoint x="736.0" y="118.0"/>
+        <di:waypoint x="786.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_f93134b2-6fb1-4867-930f-4c29b55ab6d5" id="BPMNShape_f9d852d7-7cb4-4b98-93d3-add1ff1f7837">
+        <dc:Bounds height="80.0" width="100.0" x="936.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_44bed2ea-bf0c-4eaf-bb3e-cb6916692962" id="BPMNEdge_e2071388-70a0-4e44-982b-a405c2352d77">
+        <di:waypoint x="886.0" y="118.0"/>
+        <di:waypoint x="936.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_80ef171d-4d1b-45ea-b3dc-b2ef40041d57" id="BPMNShape_3b86cf1d-529d-447d-9d0a-5d8309870c8f">
+        <dc:Bounds height="80.0" width="100.0" x="1086.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_acd2d6f8-306b-4b7d-bcf3-a5102e286094" id="BPMNEdge_224995dc-d50e-4961-b33e-c1c78013e442">
+        <di:waypoint x="1036.0" y="118.0"/>
+        <di:waypoint x="1086.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_9596f8cd-d096-4f33-a29c-6ddc4ef0474e" id="BPMNShape_116ffb5e-4a37-42b9-a80c-4e38f0e8405c">
+        <dc:Bounds height="80.0" width="100.0" x="1236.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_7c614d6e-3342-4685-8893-9ee14fd007d9" id="BPMNEdge_3a447c63-ef06-4498-b995-99131f1e214b">
+        <di:waypoint x="1186.0" y="118.0"/>
+        <di:waypoint x="1236.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_015c5b76-c7ce-49a7-852b-8c6ad0149ba0" id="BPMNShape_ab1653c7-4ebb-4540-a072-66c96bf88d38">
+        <dc:Bounds height="36.0" width="36.0" x="1386.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_2ae390d5-e777-4eac-bf37-d8ee5b55d352" id="BPMNEdge_14668d11-a05f-47b2-bedd-ffe9de5b2317">
+        <di:waypoint x="1336.0" y="118.0"/>
+        <di:waypoint x="1386.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

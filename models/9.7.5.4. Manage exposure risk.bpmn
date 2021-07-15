@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_d3160774-bca8-4ded-a137-bb6e257e2e6e" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_d0f04c37-14a0-4202-8343-f6764f12aedc" name="Manage exposure risk">
+    <startEvent id="startEvent_5ddc9090-c5f1-4f7f-8ae7-656058eb9302">
+      <outgoing>sequenceFlow_8223c1d4-4849-4f5e-84e5-2d66d64488ae</outgoing>
+    </startEvent>
+    <userTask id="userTask_7a7108b6-e055-40ed-828f-83c9bbc56313" name="9.7.5.4.1. Determine current customer exposures and limit exceptions">
+      <incoming>sequenceFlow_8223c1d4-4849-4f5e-84e5-2d66d64488ae</incoming>
+      <outgoing>sequenceFlow_433ee1c9-4e45-48c9-a166-33697e27d456</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_8223c1d4-4849-4f5e-84e5-2d66d64488ae" sourceRef="startEvent_5ddc9090-c5f1-4f7f-8ae7-656058eb9302" targetRef="userTask_7a7108b6-e055-40ed-828f-83c9bbc56313"/>
+    <userTask id="userTask_0a91c2ce-c665-4ac0-a614-a97707f4edee" name="9.7.5.4.2. Resolve customer exposure limit violations">
+      <incoming>sequenceFlow_433ee1c9-4e45-48c9-a166-33697e27d456</incoming>
+      <outgoing>sequenceFlow_a2f8af7e-1721-4203-a5ee-a64ef3b021fc</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_433ee1c9-4e45-48c9-a166-33697e27d456" sourceRef="userTask_7a7108b6-e055-40ed-828f-83c9bbc56313" targetRef="userTask_0a91c2ce-c665-4ac0-a614-a97707f4edee"/>
+    <userTask id="userTask_f0e88e67-4d58-437e-9e11-004f1e369824" name="9.7.5.4.3. Manage customer collateral">
+      <incoming>sequenceFlow_a2f8af7e-1721-4203-a5ee-a64ef3b021fc</incoming>
+      <outgoing>sequenceFlow_1d3b8aed-47d4-4481-95c1-12d1c9c43ae5</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_a2f8af7e-1721-4203-a5ee-a64ef3b021fc" sourceRef="userTask_0a91c2ce-c665-4ac0-a614-a97707f4edee" targetRef="userTask_f0e88e67-4d58-437e-9e11-004f1e369824"/>
+    <userTask id="userTask_a06afb6d-3d5e-4d69-92e9-303624eb0b26" name="9.7.5.4.4. Perform annual customer credit reviews">
+      <incoming>sequenceFlow_1d3b8aed-47d4-4481-95c1-12d1c9c43ae5</incoming>
+      <outgoing>sequenceFlow_67903125-6bf4-4e30-8f3d-b92496490199</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_1d3b8aed-47d4-4481-95c1-12d1c9c43ae5" sourceRef="userTask_f0e88e67-4d58-437e-9e11-004f1e369824" targetRef="userTask_a06afb6d-3d5e-4d69-92e9-303624eb0b26"/>
+    <endEvent id="endEvent_854e14df-9cc3-4079-8651-e0152e370b67">
+      <incoming>sequenceFlow_67903125-6bf4-4e30-8f3d-b92496490199</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_67903125-6bf4-4e30-8f3d-b92496490199" sourceRef="userTask_a06afb6d-3d5e-4d69-92e9-303624eb0b26" targetRef="endEvent_854e14df-9cc3-4079-8651-e0152e370b67"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_71e270b4-5c48-4592-913d-7c204cbb0b16">
+    <bpmndi:BPMNPlane bpmnElement="process_d0f04c37-14a0-4202-8343-f6764f12aedc" id="BPMNPlane_538aaa04-84f4-4fba-8e23-abe32a74c3c2">
+      <bpmndi:BPMNShape bpmnElement="startEvent_5ddc9090-c5f1-4f7f-8ae7-656058eb9302" id="BPMNShape_ec749b3a-ae44-4b60-b15c-f91ab9d2673d">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_7a7108b6-e055-40ed-828f-83c9bbc56313" id="BPMNShape_28e954c9-814b-4822-a04b-62399613cf19">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_8223c1d4-4849-4f5e-84e5-2d66d64488ae" id="BPMNEdge_6c2ea3da-bfda-4a95-b399-49668789f6e8">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_0a91c2ce-c665-4ac0-a614-a97707f4edee" id="BPMNShape_82d5d459-b59b-4b89-9abe-ae3f0d5621e1">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_433ee1c9-4e45-48c9-a166-33697e27d456" id="BPMNEdge_2ab2f5f4-5566-400b-bc76-d0f6f188712a">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_f0e88e67-4d58-437e-9e11-004f1e369824" id="BPMNShape_b8796fbf-5e05-4a54-964b-0ff99c22346f">
+        <dc:Bounds height="80.0" width="100.0" x="486.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_a2f8af7e-1721-4203-a5ee-a64ef3b021fc" id="BPMNEdge_435b4c12-f6b0-49fa-a6ae-b370c691a1af">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_a06afb6d-3d5e-4d69-92e9-303624eb0b26" id="BPMNShape_11d1edd3-995f-47ac-a4ff-810029207c28">
+        <dc:Bounds height="80.0" width="100.0" x="636.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_1d3b8aed-47d4-4481-95c1-12d1c9c43ae5" id="BPMNEdge_34fb3ad4-c4e1-4629-a625-9cac6bfc12d6">
+        <di:waypoint x="586.0" y="118.0"/>
+        <di:waypoint x="636.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_854e14df-9cc3-4079-8651-e0152e370b67" id="BPMNShape_3e635f08-48c3-4808-b3e3-381ecaed6868">
+        <dc:Bounds height="36.0" width="36.0" x="786.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_67903125-6bf4-4e30-8f3d-b92496490199" id="BPMNEdge_0485f83b-61cd-44a2-aac1-1ad33e892f72">
+        <di:waypoint x="736.0" y="118.0"/>
+        <di:waypoint x="786.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

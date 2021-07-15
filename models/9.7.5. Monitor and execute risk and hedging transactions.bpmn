@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_9fc65452-73cf-4e9d-8fc1-6abea79738b6" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_0350839f-cbb0-4c4f-ab1e-ed1d838277cb" name="Monitor and execute risk and hedging transactions">
+    <startEvent id="startEvent_9028a85c-1907-4891-83e7-73c79b12a135">
+      <outgoing>sequenceFlow_c12dcf6a-b7ab-464e-9f10-c54a0d5055f7</outgoing>
+    </startEvent>
+    <userTask id="userTask_452de615-afa4-4b03-8557-a97227a9a69a" name="9.7.5.1. Develop risk management/hedging strategy">
+      <incoming>sequenceFlow_c12dcf6a-b7ab-464e-9f10-c54a0d5055f7</incoming>
+      <outgoing>sequenceFlow_762ae5a2-aaec-454f-beaa-7b1f3fcefabf</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_c12dcf6a-b7ab-464e-9f10-c54a0d5055f7" sourceRef="startEvent_9028a85c-1907-4891-83e7-73c79b12a135" targetRef="userTask_452de615-afa4-4b03-8557-a97227a9a69a"/>
+    <userTask id="userTask_2ed8b14b-c80f-44e7-b10b-d0b11531f5c4" name="9.7.5.2. Manage interest rate risk">
+      <incoming>sequenceFlow_762ae5a2-aaec-454f-beaa-7b1f3fcefabf</incoming>
+      <outgoing>sequenceFlow_fe3432df-c48a-40f1-a635-e0e7c6b607af</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_762ae5a2-aaec-454f-beaa-7b1f3fcefabf" sourceRef="userTask_452de615-afa4-4b03-8557-a97227a9a69a" targetRef="userTask_2ed8b14b-c80f-44e7-b10b-d0b11531f5c4"/>
+    <userTask id="userTask_303bd180-821c-46d4-a2ad-e83624f05215" name="9.7.5.3. Manage foreign exchange risk">
+      <incoming>sequenceFlow_fe3432df-c48a-40f1-a635-e0e7c6b607af</incoming>
+      <outgoing>sequenceFlow_6c98f6ef-9d19-4d27-b7d2-12fc9e72e828</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_fe3432df-c48a-40f1-a635-e0e7c6b607af" sourceRef="userTask_2ed8b14b-c80f-44e7-b10b-d0b11531f5c4" targetRef="userTask_303bd180-821c-46d4-a2ad-e83624f05215"/>
+    <userTask id="userTask_61f0dbac-edc7-490d-87d5-25e4eb6446c0" name="9.7.5.4. Manage exposure risk">
+      <incoming>sequenceFlow_6c98f6ef-9d19-4d27-b7d2-12fc9e72e828</incoming>
+      <outgoing>sequenceFlow_dca2b106-5319-4eaa-bb7b-018387114c74</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_6c98f6ef-9d19-4d27-b7d2-12fc9e72e828" sourceRef="userTask_303bd180-821c-46d4-a2ad-e83624f05215" targetRef="userTask_61f0dbac-edc7-490d-87d5-25e4eb6446c0"/>
+    <userTask id="userTask_303a49bd-0206-4f07-b3e8-9e368ab6b595" name="9.7.5.5. Execute hedging transactions">
+      <incoming>sequenceFlow_dca2b106-5319-4eaa-bb7b-018387114c74</incoming>
+      <outgoing>sequenceFlow_ddc13fe7-3cb7-44e8-b528-5987062fb036</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_dca2b106-5319-4eaa-bb7b-018387114c74" sourceRef="userTask_61f0dbac-edc7-490d-87d5-25e4eb6446c0" targetRef="userTask_303a49bd-0206-4f07-b3e8-9e368ab6b595"/>
+    <userTask id="userTask_14fffed8-11ba-43a1-b93a-de40ad1ef31a" name="9.7.5.6. Produce hedge accounting transactions and reports">
+      <incoming>sequenceFlow_ddc13fe7-3cb7-44e8-b528-5987062fb036</incoming>
+      <outgoing>sequenceFlow_f781d425-8a47-49a7-a3ae-4e978523fd72</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_ddc13fe7-3cb7-44e8-b528-5987062fb036" sourceRef="userTask_303a49bd-0206-4f07-b3e8-9e368ab6b595" targetRef="userTask_14fffed8-11ba-43a1-b93a-de40ad1ef31a"/>
+    <endEvent id="endEvent_2b8cc65b-fee4-44c9-93d5-af22b7300726">
+      <incoming>sequenceFlow_f781d425-8a47-49a7-a3ae-4e978523fd72</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_f781d425-8a47-49a7-a3ae-4e978523fd72" sourceRef="userTask_14fffed8-11ba-43a1-b93a-de40ad1ef31a" targetRef="endEvent_2b8cc65b-fee4-44c9-93d5-af22b7300726"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_4de8b9ac-58e9-4de9-9227-10d7d85fa29f">
+    <bpmndi:BPMNPlane bpmnElement="process_0350839f-cbb0-4c4f-ab1e-ed1d838277cb" id="BPMNPlane_e3b70958-9c70-4771-a508-5947a680e400">
+      <bpmndi:BPMNShape bpmnElement="startEvent_9028a85c-1907-4891-83e7-73c79b12a135" id="BPMNShape_bcf348d4-38bb-4cea-b2c3-7412520683f1">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_452de615-afa4-4b03-8557-a97227a9a69a" id="BPMNShape_325eb11d-e04f-4ac2-8564-d3489d4af524">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_c12dcf6a-b7ab-464e-9f10-c54a0d5055f7" id="BPMNEdge_3520ada6-b733-41df-b87b-edf396a4a126">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_2ed8b14b-c80f-44e7-b10b-d0b11531f5c4" id="BPMNShape_77b22585-5d88-4b34-94d2-33967c79b4d4">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_762ae5a2-aaec-454f-beaa-7b1f3fcefabf" id="BPMNEdge_3427b995-0797-4da4-b6ae-86a49d21b16a">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_303bd180-821c-46d4-a2ad-e83624f05215" id="BPMNShape_6579979b-6ed9-41a5-a61c-08c8e4a1926a">
+        <dc:Bounds height="80.0" width="100.0" x="486.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_fe3432df-c48a-40f1-a635-e0e7c6b607af" id="BPMNEdge_56426ace-4dfa-4f79-b736-8141fb860f3e">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_61f0dbac-edc7-490d-87d5-25e4eb6446c0" id="BPMNShape_f9d9c9d7-916a-4471-a951-2424d1474852">
+        <dc:Bounds height="80.0" width="100.0" x="636.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_6c98f6ef-9d19-4d27-b7d2-12fc9e72e828" id="BPMNEdge_c46cb7b4-c8b8-45e0-a808-6b4c38810e45">
+        <di:waypoint x="586.0" y="118.0"/>
+        <di:waypoint x="636.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_303a49bd-0206-4f07-b3e8-9e368ab6b595" id="BPMNShape_fb25e989-ccc3-4295-a64b-48dce9ee9859">
+        <dc:Bounds height="80.0" width="100.0" x="786.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_dca2b106-5319-4eaa-bb7b-018387114c74" id="BPMNEdge_22cfc37e-f260-49c8-86b3-f1f488cc6aad">
+        <di:waypoint x="736.0" y="118.0"/>
+        <di:waypoint x="786.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_14fffed8-11ba-43a1-b93a-de40ad1ef31a" id="BPMNShape_22b10529-db20-4c87-8e60-ed645808a2a9">
+        <dc:Bounds height="80.0" width="100.0" x="936.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_ddc13fe7-3cb7-44e8-b528-5987062fb036" id="BPMNEdge_e9d9c84f-6239-4379-ac0c-1b189795bc5f">
+        <di:waypoint x="886.0" y="118.0"/>
+        <di:waypoint x="936.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_2b8cc65b-fee4-44c9-93d5-af22b7300726" id="BPMNShape_cb0a3498-db2a-43d5-9cb5-c6a80a9d8dba">
+        <dc:Bounds height="36.0" width="36.0" x="1086.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_f781d425-8a47-49a7-a3ae-4e978523fd72" id="BPMNEdge_3233243a-f6ba-4f4f-9e3a-2275e5ac7180">
+        <di:waypoint x="1036.0" y="118.0"/>
+        <di:waypoint x="1086.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

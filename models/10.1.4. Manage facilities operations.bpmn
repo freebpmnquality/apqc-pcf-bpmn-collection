@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_a28713d2-cc74-4479-a63f-88cdca231ed7" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_10cea3cb-15e4-461d-b0fa-4946abd39f88" name="Manage facilities operations">
+    <startEvent id="startEvent_9baf811e-0c32-4e99-88a9-ed38472bcefd">
+      <outgoing>sequenceFlow_e9c204cf-9c28-4d8d-9a2c-d98a097ecf64</outgoing>
+    </startEvent>
+    <userTask id="userTask_11df5694-985d-498b-9a1e-99e2daf0a588" name="10.1.4.1. Relocate people">
+      <incoming>sequenceFlow_e9c204cf-9c28-4d8d-9a2c-d98a097ecf64</incoming>
+      <outgoing>sequenceFlow_46a86444-1c0a-4d89-ac34-9338aaeeea2c</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_e9c204cf-9c28-4d8d-9a2c-d98a097ecf64" sourceRef="startEvent_9baf811e-0c32-4e99-88a9-ed38472bcefd" targetRef="userTask_11df5694-985d-498b-9a1e-99e2daf0a588"/>
+    <userTask id="userTask_45d7786a-75e4-40e6-bbcc-df2e85af62f9" name="10.1.4.2. Relocate material and tools">
+      <incoming>sequenceFlow_46a86444-1c0a-4d89-ac34-9338aaeeea2c</incoming>
+      <outgoing>sequenceFlow_8096ce1b-acb2-43fc-b85a-2d212d4d4685</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_46a86444-1c0a-4d89-ac34-9338aaeeea2c" sourceRef="userTask_11df5694-985d-498b-9a1e-99e2daf0a588" targetRef="userTask_45d7786a-75e4-40e6-bbcc-df2e85af62f9"/>
+    <endEvent id="endEvent_e3ded197-79a1-429e-bf70-15e292f771b0">
+      <incoming>sequenceFlow_8096ce1b-acb2-43fc-b85a-2d212d4d4685</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_8096ce1b-acb2-43fc-b85a-2d212d4d4685" sourceRef="userTask_45d7786a-75e4-40e6-bbcc-df2e85af62f9" targetRef="endEvent_e3ded197-79a1-429e-bf70-15e292f771b0"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_86bed6a8-4e48-4140-925e-2fe0e2b70817">
+    <bpmndi:BPMNPlane bpmnElement="process_10cea3cb-15e4-461d-b0fa-4946abd39f88" id="BPMNPlane_b7dc0859-4874-4996-9458-96ac4f34aa65">
+      <bpmndi:BPMNShape bpmnElement="startEvent_9baf811e-0c32-4e99-88a9-ed38472bcefd" id="BPMNShape_c1ce0806-5958-4a92-86f8-a07680e0f715">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_11df5694-985d-498b-9a1e-99e2daf0a588" id="BPMNShape_96350e64-4d27-4043-a5fe-1c5982371027">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_e9c204cf-9c28-4d8d-9a2c-d98a097ecf64" id="BPMNEdge_afa3937f-b4ee-4fbe-950d-4b19af410ee3">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_45d7786a-75e4-40e6-bbcc-df2e85af62f9" id="BPMNShape_050df9fe-5461-4df4-991a-5b7b8029484b">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_46a86444-1c0a-4d89-ac34-9338aaeeea2c" id="BPMNEdge_a6684c91-8380-4659-93a2-d344d6c379bb">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_e3ded197-79a1-429e-bf70-15e292f771b0" id="BPMNShape_d1b27f55-4c5e-43eb-8493-236d6cd4720b">
+        <dc:Bounds height="36.0" width="36.0" x="486.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_8096ce1b-acb2-43fc-b85a-2d212d4d4685" id="BPMNEdge_07c7f7a8-3ee2-43b0-990f-620f3a25a66a">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_004aec15-8820-4559-891f-d6c9d9d0237e" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_7f639174-5fc1-4f13-9c44-17e9d557530d" name="Develop and implement security  privacy  and data protection controls">
+    <startEvent id="startEvent_29857e50-20ac-4bb2-884a-451ab0951da6">
+      <outgoing>sequenceFlow_30634ed9-38c6-40c7-9e18-5cfc62e998c7</outgoing>
+    </startEvent>
+    <userTask id="userTask_184179de-832e-42e1-b77f-1da073a8b2b2" name="8.3.1. Establish information security, privacy, and data protection strategies and levels">
+      <incoming>sequenceFlow_30634ed9-38c6-40c7-9e18-5cfc62e998c7</incoming>
+      <outgoing>sequenceFlow_17ef13e1-2906-48a2-96f5-f53fd41c7c96</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_30634ed9-38c6-40c7-9e18-5cfc62e998c7" sourceRef="startEvent_29857e50-20ac-4bb2-884a-451ab0951da6" targetRef="userTask_184179de-832e-42e1-b77f-1da073a8b2b2"/>
+    <userTask id="userTask_10cc91f9-1c6b-4c89-8e55-704fab601c26" name="8.3.2. Test, evaluate, and implement information security and privacy and data protection controls">
+      <incoming>sequenceFlow_17ef13e1-2906-48a2-96f5-f53fd41c7c96</incoming>
+      <outgoing>sequenceFlow_4174cffa-654a-44a1-a5c2-98efa90e579b</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_17ef13e1-2906-48a2-96f5-f53fd41c7c96" sourceRef="userTask_184179de-832e-42e1-b77f-1da073a8b2b2" targetRef="userTask_10cc91f9-1c6b-4c89-8e55-704fab601c26"/>
+    <endEvent id="endEvent_6eb03d88-3002-4c8c-b840-6182c607241a">
+      <incoming>sequenceFlow_4174cffa-654a-44a1-a5c2-98efa90e579b</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_4174cffa-654a-44a1-a5c2-98efa90e579b" sourceRef="userTask_10cc91f9-1c6b-4c89-8e55-704fab601c26" targetRef="endEvent_6eb03d88-3002-4c8c-b840-6182c607241a"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_4f36aea7-7003-404f-b510-7273fe767b0e">
+    <bpmndi:BPMNPlane bpmnElement="process_7f639174-5fc1-4f13-9c44-17e9d557530d" id="BPMNPlane_fa6e217b-c0ae-43a1-8508-cb0437c6f3f9">
+      <bpmndi:BPMNShape bpmnElement="startEvent_29857e50-20ac-4bb2-884a-451ab0951da6" id="BPMNShape_a98ac312-dedf-4bf4-b72f-c73f31a46149">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_184179de-832e-42e1-b77f-1da073a8b2b2" id="BPMNShape_4e5d4660-2612-493c-8bc4-eeb3d40bd284">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_30634ed9-38c6-40c7-9e18-5cfc62e998c7" id="BPMNEdge_20b30634-5bb9-49ff-95a6-7e774d21c19d">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_10cc91f9-1c6b-4c89-8e55-704fab601c26" id="BPMNShape_41ded106-6c28-4764-83a3-9aae91aebf28">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_17ef13e1-2906-48a2-96f5-f53fd41c7c96" id="BPMNEdge_3ceee78a-9cc6-477c-8547-7e2bee68ae0a">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_6eb03d88-3002-4c8c-b840-6182c607241a" id="BPMNShape_218aece0-49e8-42df-849a-6f55730678eb">
+        <dc:Bounds height="36.0" width="36.0" x="486.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_4174cffa-654a-44a1-a5c2-98efa90e579b" id="BPMNEdge_b3c03dc1-f624-487b-91fc-176b49884f6a">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

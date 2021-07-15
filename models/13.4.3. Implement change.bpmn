@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_e3b0e4f5-ce0b-4406-855c-b5fce2d0d2ea" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_7d54e2ae-d3fb-428f-9f5e-5d1122713637" name="Implement change">
+    <startEvent id="startEvent_a1f7d45f-2234-40d8-bdcd-067225029600">
+      <outgoing>sequenceFlow_0f0ec237-0d1f-4d74-82c8-da2b3f61c390</outgoing>
+    </startEvent>
+    <userTask id="userTask_2e1ff404-9f83-4cd2-96c1-0ef3d0bb6a46" name="13.4.3.1. Create commitment for improvement/change">
+      <incoming>sequenceFlow_0f0ec237-0d1f-4d74-82c8-da2b3f61c390</incoming>
+      <outgoing>sequenceFlow_f28bae87-364e-4c59-a807-851a5804073f</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_0f0ec237-0d1f-4d74-82c8-da2b3f61c390" sourceRef="startEvent_a1f7d45f-2234-40d8-bdcd-067225029600" targetRef="userTask_2e1ff404-9f83-4cd2-96c1-0ef3d0bb6a46"/>
+    <userTask id="userTask_f8392e9e-cb73-4959-8692-c66017fec471" name="13.4.3.2. Reengineer business processes and systems">
+      <incoming>sequenceFlow_f28bae87-364e-4c59-a807-851a5804073f</incoming>
+      <outgoing>sequenceFlow_6bbb890a-41d2-43ba-9046-5b78ac3f99da</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_f28bae87-364e-4c59-a807-851a5804073f" sourceRef="userTask_2e1ff404-9f83-4cd2-96c1-0ef3d0bb6a46" targetRef="userTask_f8392e9e-cb73-4959-8692-c66017fec471"/>
+    <userTask id="userTask_fee9c358-e119-4b69-84a6-3d0d2140bb0f" name="13.4.3.3. Support transition to new roles or exit strategies for incumbents">
+      <incoming>sequenceFlow_6bbb890a-41d2-43ba-9046-5b78ac3f99da</incoming>
+      <outgoing>sequenceFlow_8f83ccdb-25d2-4c28-a26a-dc7204319777</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_6bbb890a-41d2-43ba-9046-5b78ac3f99da" sourceRef="userTask_f8392e9e-cb73-4959-8692-c66017fec471" targetRef="userTask_fee9c358-e119-4b69-84a6-3d0d2140bb0f"/>
+    <userTask id="userTask_f1405eb6-8f2b-49a5-9693-bdc3cf212e81" name="13.4.3.4. Monitor change">
+      <incoming>sequenceFlow_8f83ccdb-25d2-4c28-a26a-dc7204319777</incoming>
+      <outgoing>sequenceFlow_a627b02e-1bb8-4971-b6db-d4ed25d51d07</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_8f83ccdb-25d2-4c28-a26a-dc7204319777" sourceRef="userTask_fee9c358-e119-4b69-84a6-3d0d2140bb0f" targetRef="userTask_f1405eb6-8f2b-49a5-9693-bdc3cf212e81"/>
+    <userTask id="userTask_5add7eaf-afdd-464e-b7ca-0714581dd87a" name="13.4.3.5. Report on change">
+      <incoming>sequenceFlow_a627b02e-1bb8-4971-b6db-d4ed25d51d07</incoming>
+      <outgoing>sequenceFlow_37d23939-291a-43dc-a788-2fdf93f2f45c</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_a627b02e-1bb8-4971-b6db-d4ed25d51d07" sourceRef="userTask_f1405eb6-8f2b-49a5-9693-bdc3cf212e81" targetRef="userTask_5add7eaf-afdd-464e-b7ca-0714581dd87a"/>
+    <endEvent id="endEvent_844d895c-049e-42fe-b13c-c67d83dcedbb">
+      <incoming>sequenceFlow_37d23939-291a-43dc-a788-2fdf93f2f45c</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_37d23939-291a-43dc-a788-2fdf93f2f45c" sourceRef="userTask_5add7eaf-afdd-464e-b7ca-0714581dd87a" targetRef="endEvent_844d895c-049e-42fe-b13c-c67d83dcedbb"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_4cc63552-66c1-4e7b-a8c1-c0ebe74a59b4">
+    <bpmndi:BPMNPlane bpmnElement="process_7d54e2ae-d3fb-428f-9f5e-5d1122713637" id="BPMNPlane_0809bf61-9372-45c5-b4f9-a567551c5a0f">
+      <bpmndi:BPMNShape bpmnElement="startEvent_a1f7d45f-2234-40d8-bdcd-067225029600" id="BPMNShape_3f0884fb-4bf2-4937-af25-f9954e37c766">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_2e1ff404-9f83-4cd2-96c1-0ef3d0bb6a46" id="BPMNShape_237a08d2-4f6a-43f3-a58f-7b497d993b13">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_0f0ec237-0d1f-4d74-82c8-da2b3f61c390" id="BPMNEdge_de6772f1-4c5c-4eed-95c6-65277c24b02f">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_f8392e9e-cb73-4959-8692-c66017fec471" id="BPMNShape_d06fd5b9-649a-43d6-b684-bd0ae819bfd1">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_f28bae87-364e-4c59-a807-851a5804073f" id="BPMNEdge_16b928f2-d891-47d5-8c7e-3a43d2176dfe">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_fee9c358-e119-4b69-84a6-3d0d2140bb0f" id="BPMNShape_a7567833-c9cc-4063-b925-de360da5e1a9">
+        <dc:Bounds height="80.0" width="100.0" x="486.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_6bbb890a-41d2-43ba-9046-5b78ac3f99da" id="BPMNEdge_944319c8-873e-4d5c-8a5a-3896e7b4f75f">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_f1405eb6-8f2b-49a5-9693-bdc3cf212e81" id="BPMNShape_7158834b-22cf-48b5-966a-156de3072c6c">
+        <dc:Bounds height="80.0" width="100.0" x="636.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_8f83ccdb-25d2-4c28-a26a-dc7204319777" id="BPMNEdge_4f781e85-3cdd-4f94-8420-42d56c0a7bd0">
+        <di:waypoint x="586.0" y="118.0"/>
+        <di:waypoint x="636.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_5add7eaf-afdd-464e-b7ca-0714581dd87a" id="BPMNShape_ee6dae90-e0de-48b4-8be0-f8a7be23623c">
+        <dc:Bounds height="80.0" width="100.0" x="786.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_a627b02e-1bb8-4971-b6db-d4ed25d51d07" id="BPMNEdge_b3ed5b37-28f6-4bfb-bedf-918ef2b0c186">
+        <di:waypoint x="736.0" y="118.0"/>
+        <di:waypoint x="786.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_844d895c-049e-42fe-b13c-c67d83dcedbb" id="BPMNShape_f4f56080-1b32-426c-9c95-5d016d06fd3f">
+        <dc:Bounds height="36.0" width="36.0" x="936.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_37d23939-291a-43dc-a788-2fdf93f2f45c" id="BPMNEdge_9e98b6e1-520b-42f7-85e3-f1b22677ddbf">
+        <di:waypoint x="886.0" y="118.0"/>
+        <di:waypoint x="936.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_068cf953-17a2-4fc7-976c-bda7c66fbfaa" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_ab8e3468-ac27-4cb1-820c-8a36f391cff3" name="Assign resources to product service project">
+    <startEvent id="startEvent_685ca9c6-597d-4062-860b-8952787fde6c">
+      <outgoing>sequenceFlow_0e2acbb6-9f15-4aa8-a984-b505fab3eaa0</outgoing>
+    </startEvent>
+    <userTask id="userTask_9b72d844-d756-4187-8e0e-f38a3a9e5c14" name="2.3.1.1.1. Identify requirements for product/service design/development partners">
+      <incoming>sequenceFlow_0e2acbb6-9f15-4aa8-a984-b505fab3eaa0</incoming>
+      <outgoing>sequenceFlow_38397106-6bf6-442e-9c46-8080905ecc85</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_0e2acbb6-9f15-4aa8-a984-b505fab3eaa0" sourceRef="startEvent_685ca9c6-597d-4062-860b-8952787fde6c" targetRef="userTask_9b72d844-d756-4187-8e0e-f38a3a9e5c14"/>
+    <endEvent id="endEvent_d9d84e7d-f47b-4ab4-9dcd-50ae0aa66cfa">
+      <incoming>sequenceFlow_38397106-6bf6-442e-9c46-8080905ecc85</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_38397106-6bf6-442e-9c46-8080905ecc85" sourceRef="userTask_9b72d844-d756-4187-8e0e-f38a3a9e5c14" targetRef="endEvent_d9d84e7d-f47b-4ab4-9dcd-50ae0aa66cfa"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_abd6bb9a-0470-4699-b627-1f1fa3969234">
+    <bpmndi:BPMNPlane bpmnElement="process_ab8e3468-ac27-4cb1-820c-8a36f391cff3" id="BPMNPlane_ad445a09-3726-426b-bb75-8902593dfd2e">
+      <bpmndi:BPMNShape bpmnElement="startEvent_685ca9c6-597d-4062-860b-8952787fde6c" id="BPMNShape_fab77dbd-5650-44ec-9747-f7b0fb8f1401">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_9b72d844-d756-4187-8e0e-f38a3a9e5c14" id="BPMNShape_06dd593e-4abe-47e9-b8ed-22844ea131ef">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_0e2acbb6-9f15-4aa8-a984-b505fab3eaa0" id="BPMNEdge_927620e9-e73a-439f-9c6e-896964ebf028">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_d9d84e7d-f47b-4ab4-9dcd-50ae0aa66cfa" id="BPMNShape_7f1f4dcd-2987-459b-b9c7-29639aa6c988">
+        <dc:Bounds height="36.0" width="36.0" x="336.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_38397106-6bf6-442e-9c46-8080905ecc85" id="BPMNEdge_3a0d90a6-c343-4378-ae3c-a2833009ba90">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

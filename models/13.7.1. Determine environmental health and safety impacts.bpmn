@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_d80d2221-da79-4811-956d-cd59ddfb907f" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_c922663d-2686-45ad-9467-ddcc47593c6c" name="Determine environmental health and safety impacts">
+    <startEvent id="startEvent_f19cb5d1-0fa9-4ea2-9ef1-f31bbf43fc6b">
+      <outgoing>sequenceFlow_968f9805-a7de-4bb2-8feb-fe779f690189</outgoing>
+    </startEvent>
+    <userTask id="userTask_b6e4a0ac-0e65-414f-9549-4689d9e2399a" name="13.7.1.1. Evaluate environmental impact of products, services, and operations">
+      <incoming>sequenceFlow_968f9805-a7de-4bb2-8feb-fe779f690189</incoming>
+      <outgoing>sequenceFlow_1a6268fd-bb0f-4cc0-a0be-f9d739015e5b</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_968f9805-a7de-4bb2-8feb-fe779f690189" sourceRef="startEvent_f19cb5d1-0fa9-4ea2-9ef1-f31bbf43fc6b" targetRef="userTask_b6e4a0ac-0e65-414f-9549-4689d9e2399a"/>
+    <userTask id="userTask_22de452d-bb9e-49d0-ba05-80ef21c47677" name="13.7.1.2. Conduct health and safety and environmental audits">
+      <incoming>sequenceFlow_1a6268fd-bb0f-4cc0-a0be-f9d739015e5b</incoming>
+      <outgoing>sequenceFlow_1767fa0d-e71b-4a5c-8ce2-02495005c8e7</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_1a6268fd-bb0f-4cc0-a0be-f9d739015e5b" sourceRef="userTask_b6e4a0ac-0e65-414f-9549-4689d9e2399a" targetRef="userTask_22de452d-bb9e-49d0-ba05-80ef21c47677"/>
+    <endEvent id="endEvent_3c966865-a70a-4956-89ee-edc875eb9faf">
+      <incoming>sequenceFlow_1767fa0d-e71b-4a5c-8ce2-02495005c8e7</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_1767fa0d-e71b-4a5c-8ce2-02495005c8e7" sourceRef="userTask_22de452d-bb9e-49d0-ba05-80ef21c47677" targetRef="endEvent_3c966865-a70a-4956-89ee-edc875eb9faf"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_e7a2f5e4-c5a7-4bb6-8c30-92799aabc367">
+    <bpmndi:BPMNPlane bpmnElement="process_c922663d-2686-45ad-9467-ddcc47593c6c" id="BPMNPlane_6ed9bcff-3fb9-4b9f-8de6-b1ef008a8fc4">
+      <bpmndi:BPMNShape bpmnElement="startEvent_f19cb5d1-0fa9-4ea2-9ef1-f31bbf43fc6b" id="BPMNShape_3b772403-99dc-4b53-8589-1eb5d11a8f77">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_b6e4a0ac-0e65-414f-9549-4689d9e2399a" id="BPMNShape_9a99d49f-9a3c-401d-8926-599fc450f236">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_968f9805-a7de-4bb2-8feb-fe779f690189" id="BPMNEdge_333d1372-9ccf-4fec-a406-d75c9f601961">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_22de452d-bb9e-49d0-ba05-80ef21c47677" id="BPMNShape_1e2f1eef-e78b-4650-81e4-3ea2bd5d1dec">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_1a6268fd-bb0f-4cc0-a0be-f9d739015e5b" id="BPMNEdge_0865e56b-3c57-491b-b66b-a2675e42f1ff">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_3c966865-a70a-4956-89ee-edc875eb9faf" id="BPMNShape_acc33220-0ddf-4497-bdf2-53de73b3e8a1">
+        <dc:Bounds height="36.0" width="36.0" x="486.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_1767fa0d-e71b-4a5c-8ce2-02495005c8e7" id="BPMNEdge_a55301ec-8e89-4544-836d-4e9072970749">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

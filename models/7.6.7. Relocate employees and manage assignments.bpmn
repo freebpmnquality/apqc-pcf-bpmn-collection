@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_1e79eb2d-3327-43d6-8d5e-a4612ff14851" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_d7fabfdd-f0aa-4ead-b773-5aa3d0427912" name="Relocate employees and manage assignments">
+    <startEvent id="startEvent_a1381baa-961e-4052-9eed-ec404ed9f18c">
+      <outgoing>sequenceFlow_d8e546e5-85ca-443a-99d0-85fd7cf88dac</outgoing>
+    </startEvent>
+    <userTask id="userTask_4f5e0538-c3ac-4ab4-b803-641818e4bc83" name="7.6.7.1. Manage expatriates">
+      <incoming>sequenceFlow_d8e546e5-85ca-443a-99d0-85fd7cf88dac</incoming>
+      <outgoing>sequenceFlow_05f09bc3-2ae3-4637-b083-cf9150719128</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_d8e546e5-85ca-443a-99d0-85fd7cf88dac" sourceRef="startEvent_a1381baa-961e-4052-9eed-ec404ed9f18c" targetRef="userTask_4f5e0538-c3ac-4ab4-b803-641818e4bc83"/>
+    <endEvent id="endEvent_704bf333-1f28-4f49-b701-aaf6b58bd8db">
+      <incoming>sequenceFlow_05f09bc3-2ae3-4637-b083-cf9150719128</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_05f09bc3-2ae3-4637-b083-cf9150719128" sourceRef="userTask_4f5e0538-c3ac-4ab4-b803-641818e4bc83" targetRef="endEvent_704bf333-1f28-4f49-b701-aaf6b58bd8db"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_357a4df3-18fb-4fe3-836e-4be479ff1c09">
+    <bpmndi:BPMNPlane bpmnElement="process_d7fabfdd-f0aa-4ead-b773-5aa3d0427912" id="BPMNPlane_c65cb157-f5e4-4dd7-9bee-2b2bcef2a743">
+      <bpmndi:BPMNShape bpmnElement="startEvent_a1381baa-961e-4052-9eed-ec404ed9f18c" id="BPMNShape_d528bc31-7c76-4ad0-aac8-4dc8487a5727">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_4f5e0538-c3ac-4ab4-b803-641818e4bc83" id="BPMNShape_dc008ff5-8c13-4854-8186-9aed41202ef1">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_d8e546e5-85ca-443a-99d0-85fd7cf88dac" id="BPMNEdge_957f6ed2-09bb-4b43-aaa4-14280851f1a9">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_704bf333-1f28-4f49-b701-aaf6b58bd8db" id="BPMNShape_92315ad4-ee73-4a51-9551-e3d4d739a1f9">
+        <dc:Bounds height="36.0" width="36.0" x="336.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_05f09bc3-2ae3-4637-b083-cf9150719128" id="BPMNEdge_d5fc3b10-6c21-410a-aa14-102640a0119e">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

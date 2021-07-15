@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_ed1efd33-ea8b-471b-8c98-a02481ec654f" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_93220daa-5643-4dd4-8f4c-ccf5bb403f7d" name="Design and manage customer loyalty program">
+    <startEvent id="startEvent_0313774f-da91-48fe-b8be-5f84afc6bdd1">
+      <outgoing>sequenceFlow_9a59cf7c-8625-4bf3-8c2b-f96ec21dca0a</outgoing>
+    </startEvent>
+    <userTask id="userTask_4543e728-df1c-430a-a688-97c16318753e" name="3.2.6.1. Define customer loyalty program">
+      <incoming>sequenceFlow_9a59cf7c-8625-4bf3-8c2b-f96ec21dca0a</incoming>
+      <outgoing>sequenceFlow_01a1f606-5292-4d75-935d-e94ae490eb89</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_9a59cf7c-8625-4bf3-8c2b-f96ec21dca0a" sourceRef="startEvent_0313774f-da91-48fe-b8be-5f84afc6bdd1" targetRef="userTask_4543e728-df1c-430a-a688-97c16318753e"/>
+    <userTask id="userTask_d3a631c4-96e2-47d1-a91f-b5bb980ef3f4" name="3.2.6.2. Acquire members to customer loyalty program">
+      <incoming>sequenceFlow_01a1f606-5292-4d75-935d-e94ae490eb89</incoming>
+      <outgoing>sequenceFlow_898a2b2b-7c53-4ebf-adb7-b4c912a25b7e</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_01a1f606-5292-4d75-935d-e94ae490eb89" sourceRef="userTask_4543e728-df1c-430a-a688-97c16318753e" targetRef="userTask_d3a631c4-96e2-47d1-a91f-b5bb980ef3f4"/>
+    <userTask id="userTask_d38f16ec-f5de-4d1c-8274-0f6686c7fa03" name="3.2.6.3. Build engagement and relationship with members">
+      <incoming>sequenceFlow_898a2b2b-7c53-4ebf-adb7-b4c912a25b7e</incoming>
+      <outgoing>sequenceFlow_88495458-5834-4b2b-ab84-83b69ec78474</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_898a2b2b-7c53-4ebf-adb7-b4c912a25b7e" sourceRef="userTask_d3a631c4-96e2-47d1-a91f-b5bb980ef3f4" targetRef="userTask_d38f16ec-f5de-4d1c-8274-0f6686c7fa03"/>
+    <userTask id="userTask_dd3e8a46-fb84-49b3-8379-0caf9d76175f" name="3.2.6.4. Monitor customer loyalty program benefits to the enterprise and the customer">
+      <incoming>sequenceFlow_88495458-5834-4b2b-ab84-83b69ec78474</incoming>
+      <outgoing>sequenceFlow_0c33842d-2c93-4d2f-a410-f2f5739751e7</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_88495458-5834-4b2b-ab84-83b69ec78474" sourceRef="userTask_d38f16ec-f5de-4d1c-8274-0f6686c7fa03" targetRef="userTask_dd3e8a46-fb84-49b3-8379-0caf9d76175f"/>
+    <userTask id="userTask_fdd07bc3-818e-4210-98ee-9f3e0700da24" name="3.2.6.5. Optimize loyalty program value to both the enterprise and the customer">
+      <incoming>sequenceFlow_0c33842d-2c93-4d2f-a410-f2f5739751e7</incoming>
+      <outgoing>sequenceFlow_eb69fab6-f782-4702-9e83-9267adf04fc7</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_0c33842d-2c93-4d2f-a410-f2f5739751e7" sourceRef="userTask_dd3e8a46-fb84-49b3-8379-0caf9d76175f" targetRef="userTask_fdd07bc3-818e-4210-98ee-9f3e0700da24"/>
+    <endEvent id="endEvent_128d96b0-d876-4871-aec4-1e879fe8b47a">
+      <incoming>sequenceFlow_eb69fab6-f782-4702-9e83-9267adf04fc7</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_eb69fab6-f782-4702-9e83-9267adf04fc7" sourceRef="userTask_fdd07bc3-818e-4210-98ee-9f3e0700da24" targetRef="endEvent_128d96b0-d876-4871-aec4-1e879fe8b47a"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_e0b3bd8e-b6bc-4917-b504-47824c7ee5b5">
+    <bpmndi:BPMNPlane bpmnElement="process_93220daa-5643-4dd4-8f4c-ccf5bb403f7d" id="BPMNPlane_4404a8c1-c902-4a37-ba7b-49a9eb4f7784">
+      <bpmndi:BPMNShape bpmnElement="startEvent_0313774f-da91-48fe-b8be-5f84afc6bdd1" id="BPMNShape_470d8857-7dd3-43d8-a02b-5030bc4ce604">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_4543e728-df1c-430a-a688-97c16318753e" id="BPMNShape_7e93bf7c-8892-42a6-a24b-96def6616e71">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_9a59cf7c-8625-4bf3-8c2b-f96ec21dca0a" id="BPMNEdge_04b0d869-a422-4e79-a52f-652a628dbf47">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_d3a631c4-96e2-47d1-a91f-b5bb980ef3f4" id="BPMNShape_76af981a-ba86-4e07-b83b-4cf869d33491">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_01a1f606-5292-4d75-935d-e94ae490eb89" id="BPMNEdge_a0ceec79-efce-4d11-9a80-0de274bdc463">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_d38f16ec-f5de-4d1c-8274-0f6686c7fa03" id="BPMNShape_e12056bf-04ef-4ff5-8d15-4ab274fd16f6">
+        <dc:Bounds height="80.0" width="100.0" x="486.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_898a2b2b-7c53-4ebf-adb7-b4c912a25b7e" id="BPMNEdge_c2567568-b747-42b7-a856-44450ba06a7a">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_dd3e8a46-fb84-49b3-8379-0caf9d76175f" id="BPMNShape_d07f059f-0017-4f07-b0c3-ab6161b0cac1">
+        <dc:Bounds height="80.0" width="100.0" x="636.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_88495458-5834-4b2b-ab84-83b69ec78474" id="BPMNEdge_a3c568b8-ce9d-4376-9e3c-6a8da80ffed7">
+        <di:waypoint x="586.0" y="118.0"/>
+        <di:waypoint x="636.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_fdd07bc3-818e-4210-98ee-9f3e0700da24" id="BPMNShape_32b7f8d2-fad9-4e2f-9adc-978ab3d4a995">
+        <dc:Bounds height="80.0" width="100.0" x="786.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_0c33842d-2c93-4d2f-a410-f2f5739751e7" id="BPMNEdge_aadc6c59-8b24-455f-941e-acf15da7f6c8">
+        <di:waypoint x="736.0" y="118.0"/>
+        <di:waypoint x="786.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_128d96b0-d876-4871-aec4-1e879fe8b47a" id="BPMNShape_3ab2050d-1761-4bf7-9eb4-16394c090172">
+        <dc:Bounds height="36.0" width="36.0" x="936.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_eb69fab6-f782-4702-9e83-9267adf04fc7" id="BPMNEdge_e65a661d-0dae-4f58-ba25-edbc050a1008">
+        <di:waypoint x="886.0" y="118.0"/>
+        <di:waypoint x="936.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

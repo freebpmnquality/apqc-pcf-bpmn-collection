@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_c82b4f4e-5d39-41c3-9036-743dfb14d984" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_a4c6848b-57e1-4bce-8079-d7f7c889c9ea" name="Develop compensation plan">
+    <startEvent id="startEvent_33e6dd46-9dee-4f6d-94c5-5c2d7b2d4f98">
+      <outgoing>sequenceFlow_a05f2a6c-8f4d-4103-b6f1-f529b499996b</outgoing>
+    </startEvent>
+    <userTask id="userTask_e5cf9d0f-54ed-4d1c-9feb-3268bc66147d" name="7.1.2.3.1. Establish incentive plan">
+      <incoming>sequenceFlow_a05f2a6c-8f4d-4103-b6f1-f529b499996b</incoming>
+      <outgoing>sequenceFlow_8f743459-78eb-41f9-9d3b-b1621f6dae18</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_a05f2a6c-8f4d-4103-b6f1-f529b499996b" sourceRef="startEvent_33e6dd46-9dee-4f6d-94c5-5c2d7b2d4f98" targetRef="userTask_e5cf9d0f-54ed-4d1c-9feb-3268bc66147d"/>
+    <endEvent id="endEvent_42c12fe6-eab7-49be-be1b-a1742952fd87">
+      <incoming>sequenceFlow_8f743459-78eb-41f9-9d3b-b1621f6dae18</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_8f743459-78eb-41f9-9d3b-b1621f6dae18" sourceRef="userTask_e5cf9d0f-54ed-4d1c-9feb-3268bc66147d" targetRef="endEvent_42c12fe6-eab7-49be-be1b-a1742952fd87"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_0f88e1e1-5213-47a2-8319-f2c7212f66ab">
+    <bpmndi:BPMNPlane bpmnElement="process_a4c6848b-57e1-4bce-8079-d7f7c889c9ea" id="BPMNPlane_10a6095a-1633-4451-85c6-f7a58767da47">
+      <bpmndi:BPMNShape bpmnElement="startEvent_33e6dd46-9dee-4f6d-94c5-5c2d7b2d4f98" id="BPMNShape_1f987c52-8919-43ce-92b3-9c48b44137ae">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_e5cf9d0f-54ed-4d1c-9feb-3268bc66147d" id="BPMNShape_b87303ec-78ee-4fd0-95cc-1cee132ce215">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_a05f2a6c-8f4d-4103-b6f1-f529b499996b" id="BPMNEdge_6bc1bfd5-058d-45d7-90b9-590528cad4eb">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_42c12fe6-eab7-49be-be1b-a1742952fd87" id="BPMNShape_8aad4cb3-86a4-4e14-aaf4-69d5307f8fce">
+        <dc:Bounds height="36.0" width="36.0" x="336.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_8f743459-78eb-41f9-9d3b-b1621f6dae18" id="BPMNEdge_e6c9b610-3dea-4b4a-9b6a-97a52d8f03f4">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_7a859807-8a12-41f5-a567-bf611a215d6d" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_910bab04-7690-49f5-808f-6e378d43b136" name="Reward and retain employees">
+    <startEvent id="startEvent_62889dce-e5d4-4b09-b57d-3e475ee1aab7">
+      <outgoing>sequenceFlow_b5a2d43e-4e8a-497f-acb6-5f1261e3de15</outgoing>
+    </startEvent>
+    <userTask id="userTask_25fa3925-2cb8-4502-a0f2-18363b391829" name="7.5.1. Develop and manage reward, recognition, and motivation programs">
+      <incoming>sequenceFlow_b5a2d43e-4e8a-497f-acb6-5f1261e3de15</incoming>
+      <outgoing>sequenceFlow_05dfda21-4bba-4d7c-b455-7fd75e6486c5</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_b5a2d43e-4e8a-497f-acb6-5f1261e3de15" sourceRef="startEvent_62889dce-e5d4-4b09-b57d-3e475ee1aab7" targetRef="userTask_25fa3925-2cb8-4502-a0f2-18363b391829"/>
+    <userTask id="userTask_ed17a1ff-1464-4daa-99b6-346b2f0e83f9" name="7.5.2. Manage and administer benefits">
+      <incoming>sequenceFlow_05dfda21-4bba-4d7c-b455-7fd75e6486c5</incoming>
+      <outgoing>sequenceFlow_3d510347-4832-49ab-a22e-c6336a5bfb87</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_05dfda21-4bba-4d7c-b455-7fd75e6486c5" sourceRef="userTask_25fa3925-2cb8-4502-a0f2-18363b391829" targetRef="userTask_ed17a1ff-1464-4daa-99b6-346b2f0e83f9"/>
+    <userTask id="userTask_a3e90577-9c21-46d3-800f-411ebcceffab" name="7.5.3. Manage employee assistance and retention">
+      <incoming>sequenceFlow_3d510347-4832-49ab-a22e-c6336a5bfb87</incoming>
+      <outgoing>sequenceFlow_32696c37-e934-4db3-a4f1-7cfaecd263b2</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_3d510347-4832-49ab-a22e-c6336a5bfb87" sourceRef="userTask_ed17a1ff-1464-4daa-99b6-346b2f0e83f9" targetRef="userTask_a3e90577-9c21-46d3-800f-411ebcceffab"/>
+    <userTask id="userTask_3c62c138-eb80-49a8-afab-97b831114636" name="7.5.4. Administer payroll">
+      <incoming>sequenceFlow_32696c37-e934-4db3-a4f1-7cfaecd263b2</incoming>
+      <outgoing>sequenceFlow_35fdf688-041a-418a-82fc-8be1a478b517</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_32696c37-e934-4db3-a4f1-7cfaecd263b2" sourceRef="userTask_a3e90577-9c21-46d3-800f-411ebcceffab" targetRef="userTask_3c62c138-eb80-49a8-afab-97b831114636"/>
+    <endEvent id="endEvent_fbf5ca0c-2096-458f-ae97-2c133a1cc65b">
+      <incoming>sequenceFlow_35fdf688-041a-418a-82fc-8be1a478b517</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_35fdf688-041a-418a-82fc-8be1a478b517" sourceRef="userTask_3c62c138-eb80-49a8-afab-97b831114636" targetRef="endEvent_fbf5ca0c-2096-458f-ae97-2c133a1cc65b"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_9c12b3a5-a599-45c7-952e-78039d94ce34">
+    <bpmndi:BPMNPlane bpmnElement="process_910bab04-7690-49f5-808f-6e378d43b136" id="BPMNPlane_b641be33-dd78-44c2-8c55-40aa73ea6fd0">
+      <bpmndi:BPMNShape bpmnElement="startEvent_62889dce-e5d4-4b09-b57d-3e475ee1aab7" id="BPMNShape_09c83d7d-9fc7-498e-9929-6bd7b8819239">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_25fa3925-2cb8-4502-a0f2-18363b391829" id="BPMNShape_014c2205-2350-42fa-905c-89358be45fe8">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_b5a2d43e-4e8a-497f-acb6-5f1261e3de15" id="BPMNEdge_2c5ba241-1281-4326-bfd7-12ff13d44bb3">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_ed17a1ff-1464-4daa-99b6-346b2f0e83f9" id="BPMNShape_00e2050c-ec84-4513-8487-c76dd88fbe49">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_05dfda21-4bba-4d7c-b455-7fd75e6486c5" id="BPMNEdge_6eae9fa6-149e-4024-970b-cbbba78010c1">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_a3e90577-9c21-46d3-800f-411ebcceffab" id="BPMNShape_41db7140-5697-4af8-8200-4f8cea48e715">
+        <dc:Bounds height="80.0" width="100.0" x="486.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_3d510347-4832-49ab-a22e-c6336a5bfb87" id="BPMNEdge_08c5ba65-00dc-4565-b4f6-2ce7dacb099e">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_3c62c138-eb80-49a8-afab-97b831114636" id="BPMNShape_90647163-8950-437d-b77b-fcb9a15bdd7c">
+        <dc:Bounds height="80.0" width="100.0" x="636.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_32696c37-e934-4db3-a4f1-7cfaecd263b2" id="BPMNEdge_74a0bf24-e257-4094-b860-448e6bd19e4d">
+        <di:waypoint x="586.0" y="118.0"/>
+        <di:waypoint x="636.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_fbf5ca0c-2096-458f-ae97-2c133a1cc65b" id="BPMNShape_ec8c6782-167c-4d67-9974-25e2dd4e3470">
+        <dc:Bounds height="36.0" width="36.0" x="786.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_35fdf688-041a-418a-82fc-8be1a478b517" id="BPMNEdge_b1dab223-2bff-4ad7-b964-81187528315c">
+        <di:waypoint x="736.0" y="118.0"/>
+        <di:waypoint x="786.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

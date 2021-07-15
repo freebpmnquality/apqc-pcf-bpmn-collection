@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_0afe69e2-bd67-4b55-887d-f63c6b9b2f0f" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_7a924a21-018a-4e95-8549-8b53e9cd0065" name="Manage customer master data">
+    <startEvent id="startEvent_8c839e01-f3ad-414b-a7f9-1ced639feda3">
+      <outgoing>sequenceFlow_0bf9fb05-e905-4d64-a9e0-dd806a94eeb6</outgoing>
+    </startEvent>
+    <userTask id="userTask_d1bc89c1-b79b-4ff7-9f62-74575d26dd86" name="3.5.2.5.1. Collect and merge internal and third-party customer information">
+      <incoming>sequenceFlow_0bf9fb05-e905-4d64-a9e0-dd806a94eeb6</incoming>
+      <outgoing>sequenceFlow_29b1ab1d-306e-4303-a93c-1f649fbd6fe5</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_0bf9fb05-e905-4d64-a9e0-dd806a94eeb6" sourceRef="startEvent_8c839e01-f3ad-414b-a7f9-1ced639feda3" targetRef="userTask_d1bc89c1-b79b-4ff7-9f62-74575d26dd86"/>
+    <userTask id="userTask_6122e178-997f-4317-9328-f2f06218213e" name="3.5.2.5.2. De-duplicate customer data">
+      <incoming>sequenceFlow_29b1ab1d-306e-4303-a93c-1f649fbd6fe5</incoming>
+      <outgoing>sequenceFlow_31ec099c-efb4-4311-ad6e-816c9d54d82f</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_29b1ab1d-306e-4303-a93c-1f649fbd6fe5" sourceRef="userTask_d1bc89c1-b79b-4ff7-9f62-74575d26dd86" targetRef="userTask_6122e178-997f-4317-9328-f2f06218213e"/>
+    <endEvent id="endEvent_7fad52eb-6d9c-4ded-9145-3f80647801e5">
+      <incoming>sequenceFlow_31ec099c-efb4-4311-ad6e-816c9d54d82f</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_31ec099c-efb4-4311-ad6e-816c9d54d82f" sourceRef="userTask_6122e178-997f-4317-9328-f2f06218213e" targetRef="endEvent_7fad52eb-6d9c-4ded-9145-3f80647801e5"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_ec1a5861-d475-4772-8155-6be1277f70e2">
+    <bpmndi:BPMNPlane bpmnElement="process_7a924a21-018a-4e95-8549-8b53e9cd0065" id="BPMNPlane_6fab742b-cc5f-4175-984d-e71b20a06868">
+      <bpmndi:BPMNShape bpmnElement="startEvent_8c839e01-f3ad-414b-a7f9-1ced639feda3" id="BPMNShape_d7879e24-f3b8-4abe-9e95-20ef667f7d0b">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_d1bc89c1-b79b-4ff7-9f62-74575d26dd86" id="BPMNShape_09ea56b5-1743-454d-ba72-34ebedd79eb4">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_0bf9fb05-e905-4d64-a9e0-dd806a94eeb6" id="BPMNEdge_74b942de-5567-4c56-a2a3-a1a3f355bb41">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_6122e178-997f-4317-9328-f2f06218213e" id="BPMNShape_f7b88344-db78-4fc8-b5ae-62754258238d">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_29b1ab1d-306e-4303-a93c-1f649fbd6fe5" id="BPMNEdge_2097e760-4039-4ccc-959e-4162421e2328">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_7fad52eb-6d9c-4ded-9145-3f80647801e5" id="BPMNShape_894fe57d-3dcc-449a-826e-3b890f7f546b">
+        <dc:Bounds height="36.0" width="36.0" x="486.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_31ec099c-efb4-4311-ad6e-816c9d54d82f" id="BPMNEdge_a03f3537-bfcf-4032-8a7c-b250812ea1cb">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

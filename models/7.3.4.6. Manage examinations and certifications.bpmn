@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_91f0f545-48b4-4df2-a10d-e581e049cb20" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_b3b9c196-ba5f-4efb-8639-3c4a51403a5c" name="Manage examinations and certifications">
+    <startEvent id="startEvent_adb1c756-56c0-4b28-91ab-8febc00c1054">
+      <outgoing>sequenceFlow_1cd14f4f-5426-47c1-9aee-3bde44bf5b97</outgoing>
+    </startEvent>
+    <userTask id="userTask_45c6f944-bfb2-4297-a483-6b7bff5f2183" name="7.3.4.6.1. Liaise with external certification authorities">
+      <incoming>sequenceFlow_1cd14f4f-5426-47c1-9aee-3bde44bf5b97</incoming>
+      <outgoing>sequenceFlow_b4b433dd-17ec-4770-a68c-647171591475</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_1cd14f4f-5426-47c1-9aee-3bde44bf5b97" sourceRef="startEvent_adb1c756-56c0-4b28-91ab-8febc00c1054" targetRef="userTask_45c6f944-bfb2-4297-a483-6b7bff5f2183"/>
+    <userTask id="userTask_e25d4b5c-688a-411d-94b0-6a609ba4a6d8" name="7.3.4.6.2. Administer certification tests">
+      <incoming>sequenceFlow_b4b433dd-17ec-4770-a68c-647171591475</incoming>
+      <outgoing>sequenceFlow_5995e374-7319-4d02-b225-da943f96c703</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_b4b433dd-17ec-4770-a68c-647171591475" sourceRef="userTask_45c6f944-bfb2-4297-a483-6b7bff5f2183" targetRef="userTask_e25d4b5c-688a-411d-94b0-6a609ba4a6d8"/>
+    <userTask id="userTask_65b7897e-c7ac-4780-bbc3-af2ca43738e1" name="7.3.4.6.3. Appraise experience qualifications">
+      <incoming>sequenceFlow_5995e374-7319-4d02-b225-da943f96c703</incoming>
+      <outgoing>sequenceFlow_133019d2-b9e6-47c7-b634-c47504bf1d26</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_5995e374-7319-4d02-b225-da943f96c703" sourceRef="userTask_e25d4b5c-688a-411d-94b0-6a609ba4a6d8" targetRef="userTask_65b7897e-c7ac-4780-bbc3-af2ca43738e1"/>
+    <userTask id="userTask_755f4234-4274-4c7f-90c7-da1f13555906" name="7.3.4.6.4. Administer certificate issue and maintenance">
+      <incoming>sequenceFlow_133019d2-b9e6-47c7-b634-c47504bf1d26</incoming>
+      <outgoing>sequenceFlow_303b8449-39ba-4cd4-b5e4-b8ca2f47b8b9</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_133019d2-b9e6-47c7-b634-c47504bf1d26" sourceRef="userTask_65b7897e-c7ac-4780-bbc3-af2ca43738e1" targetRef="userTask_755f4234-4274-4c7f-90c7-da1f13555906"/>
+    <endEvent id="endEvent_52a9afe1-f681-4f11-8f6c-f81799eeabbd">
+      <incoming>sequenceFlow_303b8449-39ba-4cd4-b5e4-b8ca2f47b8b9</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_303b8449-39ba-4cd4-b5e4-b8ca2f47b8b9" sourceRef="userTask_755f4234-4274-4c7f-90c7-da1f13555906" targetRef="endEvent_52a9afe1-f681-4f11-8f6c-f81799eeabbd"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_5935f57a-2810-457c-8683-5127212eeb2a">
+    <bpmndi:BPMNPlane bpmnElement="process_b3b9c196-ba5f-4efb-8639-3c4a51403a5c" id="BPMNPlane_133fb012-07f1-4885-9ddf-59ecd6106c57">
+      <bpmndi:BPMNShape bpmnElement="startEvent_adb1c756-56c0-4b28-91ab-8febc00c1054" id="BPMNShape_e415a3b2-1043-4f4c-b25e-a3c729d998e9">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_45c6f944-bfb2-4297-a483-6b7bff5f2183" id="BPMNShape_9f8f4f8b-1589-4d88-a905-dcb1ef06c014">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_1cd14f4f-5426-47c1-9aee-3bde44bf5b97" id="BPMNEdge_59404b49-19dd-4d1b-8d2d-592c3557ee25">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_e25d4b5c-688a-411d-94b0-6a609ba4a6d8" id="BPMNShape_1f5b5779-3f81-4f64-bc59-d0653a7a5e7d">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_b4b433dd-17ec-4770-a68c-647171591475" id="BPMNEdge_1c4ed95b-c3e7-4355-bd90-cf860f993d01">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_65b7897e-c7ac-4780-bbc3-af2ca43738e1" id="BPMNShape_c50ee36c-5465-424c-a5d6-6cd7f9c0bf63">
+        <dc:Bounds height="80.0" width="100.0" x="486.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_5995e374-7319-4d02-b225-da943f96c703" id="BPMNEdge_b6f629cc-ccf7-43c3-a69f-8e555c63572d">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_755f4234-4274-4c7f-90c7-da1f13555906" id="BPMNShape_821a81b6-f238-4bad-909f-9b52f98327d1">
+        <dc:Bounds height="80.0" width="100.0" x="636.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_133019d2-b9e6-47c7-b634-c47504bf1d26" id="BPMNEdge_929b5115-0307-4a8c-9099-61c8c9692eb2">
+        <di:waypoint x="586.0" y="118.0"/>
+        <di:waypoint x="636.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_52a9afe1-f681-4f11-8f6c-f81799eeabbd" id="BPMNShape_e4f503fb-c2db-4bd3-b704-b099f57f565b">
+        <dc:Bounds height="36.0" width="36.0" x="786.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_303b8449-39ba-4cd4-b5e4-b8ca2f47b8b9" id="BPMNEdge_845b8c5f-19c4-4529-98b9-50286c7b5635">
+        <di:waypoint x="736.0" y="118.0"/>
+        <di:waypoint x="786.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

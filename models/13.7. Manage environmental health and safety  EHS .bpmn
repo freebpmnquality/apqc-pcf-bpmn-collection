@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_a5d0a617-5521-4f9b-be31-1284ca3d5863" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_8ccaefb5-0248-492c-8bf5-1b8210e05578" name="Manage environmental health and safety  EHS ">
+    <startEvent id="startEvent_837889a7-7090-4873-bf3e-6ec0b585ea6b">
+      <outgoing>sequenceFlow_18ebfae8-c052-4801-a331-10d2f611049e</outgoing>
+    </startEvent>
+    <userTask id="userTask_6c1a6e02-6fb8-4f26-a40e-b5149ad50669" name="13.7.1. Determine environmental health and safety impacts">
+      <incoming>sequenceFlow_18ebfae8-c052-4801-a331-10d2f611049e</incoming>
+      <outgoing>sequenceFlow_4f3c0133-1024-4a16-918d-fa86adeabd40</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_18ebfae8-c052-4801-a331-10d2f611049e" sourceRef="startEvent_837889a7-7090-4873-bf3e-6ec0b585ea6b" targetRef="userTask_6c1a6e02-6fb8-4f26-a40e-b5149ad50669"/>
+    <userTask id="userTask_9cee4c26-632f-437d-87f0-baff584dafa1" name="13.7.2. Develop and execute functional EHS program">
+      <incoming>sequenceFlow_4f3c0133-1024-4a16-918d-fa86adeabd40</incoming>
+      <outgoing>sequenceFlow_c753948e-6a9f-4f99-abfa-7fb986718865</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_4f3c0133-1024-4a16-918d-fa86adeabd40" sourceRef="userTask_6c1a6e02-6fb8-4f26-a40e-b5149ad50669" targetRef="userTask_9cee4c26-632f-437d-87f0-baff584dafa1"/>
+    <userTask id="userTask_1a4b56c4-6269-4be2-92d7-f19c6764c3b5" name="13.7.3. Train and educate functional employees">
+      <incoming>sequenceFlow_c753948e-6a9f-4f99-abfa-7fb986718865</incoming>
+      <outgoing>sequenceFlow_fc954e7e-69dc-4d6e-9325-3ee0bd1c7474</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_c753948e-6a9f-4f99-abfa-7fb986718865" sourceRef="userTask_9cee4c26-632f-437d-87f0-baff584dafa1" targetRef="userTask_1a4b56c4-6269-4be2-92d7-f19c6764c3b5"/>
+    <userTask id="userTask_dc3b9a26-b413-4dde-9c72-bf5f182676bc" name="13.7.4. Monitor and manage functional EHS management program">
+      <incoming>sequenceFlow_fc954e7e-69dc-4d6e-9325-3ee0bd1c7474</incoming>
+      <outgoing>sequenceFlow_6d058656-e6a9-4a7b-877c-ae0995e080ca</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_fc954e7e-69dc-4d6e-9325-3ee0bd1c7474" sourceRef="userTask_1a4b56c4-6269-4be2-92d7-f19c6764c3b5" targetRef="userTask_dc3b9a26-b413-4dde-9c72-bf5f182676bc"/>
+    <endEvent id="endEvent_e8634cec-1c2e-4ab1-92eb-e0c031e98d0b">
+      <incoming>sequenceFlow_6d058656-e6a9-4a7b-877c-ae0995e080ca</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_6d058656-e6a9-4a7b-877c-ae0995e080ca" sourceRef="userTask_dc3b9a26-b413-4dde-9c72-bf5f182676bc" targetRef="endEvent_e8634cec-1c2e-4ab1-92eb-e0c031e98d0b"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_aa02d15a-ac52-48ca-8fe5-d1fcf3e26fec">
+    <bpmndi:BPMNPlane bpmnElement="process_8ccaefb5-0248-492c-8bf5-1b8210e05578" id="BPMNPlane_4c608f22-0434-4040-9e5e-ce3237cac4fc">
+      <bpmndi:BPMNShape bpmnElement="startEvent_837889a7-7090-4873-bf3e-6ec0b585ea6b" id="BPMNShape_d81f7b58-f00a-4438-977f-39184e624da9">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_6c1a6e02-6fb8-4f26-a40e-b5149ad50669" id="BPMNShape_11480eb3-24b2-44b7-b8dc-88e7ee6c29c6">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_18ebfae8-c052-4801-a331-10d2f611049e" id="BPMNEdge_3606579a-44ec-4ba8-95ba-38254863ad21">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_9cee4c26-632f-437d-87f0-baff584dafa1" id="BPMNShape_ac2447f8-3c75-400f-b7d2-f5f8d9ff6524">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_4f3c0133-1024-4a16-918d-fa86adeabd40" id="BPMNEdge_50847c53-c87a-44a4-b166-0f3d97097422">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_1a4b56c4-6269-4be2-92d7-f19c6764c3b5" id="BPMNShape_9b0456ae-a70c-4c8c-a8df-f81e3ca91338">
+        <dc:Bounds height="80.0" width="100.0" x="486.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_c753948e-6a9f-4f99-abfa-7fb986718865" id="BPMNEdge_5f9a8c07-a7c6-4ee9-8f5a-6e64189f57cf">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_dc3b9a26-b413-4dde-9c72-bf5f182676bc" id="BPMNShape_c371b88a-e79c-49e4-92dc-aa04b6e40752">
+        <dc:Bounds height="80.0" width="100.0" x="636.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_fc954e7e-69dc-4d6e-9325-3ee0bd1c7474" id="BPMNEdge_85a85cd4-5026-41ec-bd58-bbc5836d05bf">
+        <di:waypoint x="586.0" y="118.0"/>
+        <di:waypoint x="636.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_e8634cec-1c2e-4ab1-92eb-e0c031e98d0b" id="BPMNShape_e075c08c-99c4-4b98-850a-538bbdc9b759">
+        <dc:Bounds height="36.0" width="36.0" x="786.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_6d058656-e6a9-4a7b-877c-ae0995e080ca" id="BPMNEdge_5b5b596d-f423-4009-ba2a-d51a4b0693e2">
+        <di:waypoint x="736.0" y="118.0"/>
+        <di:waypoint x="786.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<definitions xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="definitions_6ee009e8-af90-41ff-9fcb-c7635b3ad11c" targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL">
+  <process id="process_7efebaf1-3c1a-4b6e-acfd-fea630040771" name="Plan and manage customer service work force">
+    <startEvent id="startEvent_4177f66a-8ee5-408c-a475-1c254cbf57ee">
+      <outgoing>sequenceFlow_fcf3295b-8e04-4683-8a63-866d2ce7988f</outgoing>
+    </startEvent>
+    <userTask id="userTask_f50b1a70-9b0c-4d78-9ff9-66f56682583e" name="6.2.1.1. Forecast volume of customer service contacts">
+      <incoming>sequenceFlow_fcf3295b-8e04-4683-8a63-866d2ce7988f</incoming>
+      <outgoing>sequenceFlow_ed48c647-2ee6-4226-b48b-9ef7065cde19</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_fcf3295b-8e04-4683-8a63-866d2ce7988f" sourceRef="startEvent_4177f66a-8ee5-408c-a475-1c254cbf57ee" targetRef="userTask_f50b1a70-9b0c-4d78-9ff9-66f56682583e"/>
+    <userTask id="userTask_d8c52130-65ab-4a2b-86e0-9728ef68eb95" name="6.2.1.2. Schedule customer service work force">
+      <incoming>sequenceFlow_ed48c647-2ee6-4226-b48b-9ef7065cde19</incoming>
+      <outgoing>sequenceFlow_ac30af0e-b4e7-41c1-9427-c8ce21bf1a57</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_ed48c647-2ee6-4226-b48b-9ef7065cde19" sourceRef="userTask_f50b1a70-9b0c-4d78-9ff9-66f56682583e" targetRef="userTask_d8c52130-65ab-4a2b-86e0-9728ef68eb95"/>
+    <userTask id="userTask_0dd7a7da-1b96-4cf9-b3b0-b76d448075be" name="6.2.1.3. Track work force utilization">
+      <incoming>sequenceFlow_ac30af0e-b4e7-41c1-9427-c8ce21bf1a57</incoming>
+      <outgoing>sequenceFlow_8e3c19bc-ef07-4ed8-815b-a3732a00e775</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_ac30af0e-b4e7-41c1-9427-c8ce21bf1a57" sourceRef="userTask_d8c52130-65ab-4a2b-86e0-9728ef68eb95" targetRef="userTask_0dd7a7da-1b96-4cf9-b3b0-b76d448075be"/>
+    <userTask id="userTask_c3338b16-1fec-4fb8-a62c-996fdbea89ee" name="6.2.1.4. Monitor and evaluate quality of customer interactions with customer service representatives">
+      <incoming>sequenceFlow_8e3c19bc-ef07-4ed8-815b-a3732a00e775</incoming>
+      <outgoing>sequenceFlow_b51d4db0-12e3-4ae1-9310-73c267f695ed</outgoing>
+    </userTask>
+    <sequenceFlow id="sequenceFlow_8e3c19bc-ef07-4ed8-815b-a3732a00e775" sourceRef="userTask_0dd7a7da-1b96-4cf9-b3b0-b76d448075be" targetRef="userTask_c3338b16-1fec-4fb8-a62c-996fdbea89ee"/>
+    <endEvent id="endEvent_fc63f241-5d0e-4904-9bb7-598f7d20c57e">
+      <incoming>sequenceFlow_b51d4db0-12e3-4ae1-9310-73c267f695ed</incoming>
+    </endEvent>
+    <sequenceFlow id="sequenceFlow_b51d4db0-12e3-4ae1-9310-73c267f695ed" sourceRef="userTask_c3338b16-1fec-4fb8-a62c-996fdbea89ee" targetRef="endEvent_fc63f241-5d0e-4904-9bb7-598f7d20c57e"/>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_dee71612-c096-4075-b8bd-6778c9f3a8fc">
+    <bpmndi:BPMNPlane bpmnElement="process_7efebaf1-3c1a-4b6e-acfd-fea630040771" id="BPMNPlane_dee8cc23-dad0-4336-842f-b22fbc75ed21">
+      <bpmndi:BPMNShape bpmnElement="startEvent_4177f66a-8ee5-408c-a475-1c254cbf57ee" id="BPMNShape_3d4c794b-d4a5-46ae-bfe0-e2d3a6862bfc">
+        <dc:Bounds height="36.0" width="36.0" x="100.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="userTask_f50b1a70-9b0c-4d78-9ff9-66f56682583e" id="BPMNShape_922b2872-3c87-4dc6-bfe1-b6c1ebbc962c">
+        <dc:Bounds height="80.0" width="100.0" x="186.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_fcf3295b-8e04-4683-8a63-866d2ce7988f" id="BPMNEdge_19075fee-554f-4400-998d-e2d605cc62d4">
+        <di:waypoint x="136.0" y="118.0"/>
+        <di:waypoint x="186.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_d8c52130-65ab-4a2b-86e0-9728ef68eb95" id="BPMNShape_61dbcc32-d384-49fe-a2c5-07393c282112">
+        <dc:Bounds height="80.0" width="100.0" x="336.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_ed48c647-2ee6-4226-b48b-9ef7065cde19" id="BPMNEdge_1aeb8af4-4a44-41de-ae22-17f1c28cc97d">
+        <di:waypoint x="286.0" y="118.0"/>
+        <di:waypoint x="336.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_0dd7a7da-1b96-4cf9-b3b0-b76d448075be" id="BPMNShape_4cd9e202-d012-40a9-b3ff-74b3c4e57128">
+        <dc:Bounds height="80.0" width="100.0" x="486.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_ac30af0e-b4e7-41c1-9427-c8ce21bf1a57" id="BPMNEdge_9a54fd06-5d47-4136-8896-f65e09bac30c">
+        <di:waypoint x="436.0" y="118.0"/>
+        <di:waypoint x="486.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="userTask_c3338b16-1fec-4fb8-a62c-996fdbea89ee" id="BPMNShape_1b5a6ef4-ecd5-4182-a285-237074a95ffb">
+        <dc:Bounds height="80.0" width="100.0" x="636.0" y="78.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_8e3c19bc-ef07-4ed8-815b-a3732a00e775" id="BPMNEdge_65c79e2d-3a79-4cc6-8e1d-0250e5ea6379">
+        <di:waypoint x="586.0" y="118.0"/>
+        <di:waypoint x="636.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape bpmnElement="endEvent_fc63f241-5d0e-4904-9bb7-598f7d20c57e" id="BPMNShape_df9f2c8c-4c87-4b78-a6cb-beedfc5f8893">
+        <dc:Bounds height="36.0" width="36.0" x="786.0" y="100.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow_b51d4db0-12e3-4ae1-9310-73c267f695ed" id="BPMNEdge_129d9c67-cc4a-4389-b552-8ab785d44fe8">
+        <di:waypoint x="736.0" y="118.0"/>
+        <di:waypoint x="786.0" y="118.0"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
