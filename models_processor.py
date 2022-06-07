@@ -207,7 +207,7 @@ for bpmn_file in bpmn_files:
             </div>
             <div class="col-sm-3 mt-2">
                 <h1 itemprop="name">''' + page_title + '''</h1>
-                <h2 itemprop="brand">SCOR, BPMN</h2>
+                <h2 itemprop="brand">APQC PCF, BPMN</h2>
 
                 <h6><span itemprop="productID" class="text-muted">''' + product_id + '''</span></h6>
                 <meta itemprop="identifier_exists" content="no" />
