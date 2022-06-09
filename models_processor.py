@@ -182,7 +182,7 @@ for bpmn_file in bpmn_files:
                 <br>
 
                 <div class="canvas mt-2">
-                    <div id="js-canvas"></div>
+                    <div itemprop="image" id="js-canvas"></div>
                 </div>
                 <br>
 
